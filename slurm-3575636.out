@@ -1,0 +1,12 @@
+Running on host gpu10.bc4.acrc.priv
+Slurm job ID is 3575636
+This job runs on the following machines:
+gpu10
+Traceback (most recent call last):
+  File "main.py", line 230, in <module>
+    train()
+  File "main.py", line 194, in train
+    data, targets = get_batch(train_data, i)
+  File "main.py", line 149, in get_batch
+    target = Variable(source[:,i+1:i+1+seq_len].view(-1))
+RuntimeError: view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.

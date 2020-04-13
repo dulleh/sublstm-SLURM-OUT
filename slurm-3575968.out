@@ -1,0 +1,10 @@
+Running on host gpu25.bc4.acrc.priv
+Slurm job ID is 3575968
+This job runs on the following machines:
+gpu25
+Traceback (most recent call last):
+  File "main.py", line 238, in <module>
+    train()
+  File "main.py", line 211, in train
+    loss = criterion(output.t().reshape(-1, ntokens), targets)
+RuntimeError: t() expects a tensor with <= 2 dimensions, but self is 3D

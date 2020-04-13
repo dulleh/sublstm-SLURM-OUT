@@ -1,0 +1,19 @@
+Running on host gpu09.bc4.acrc.priv
+Slurm job ID is 3576097
+This job runs on the following machines:
+gpu09
+outputs[time].shape  torch.Size([20, 650])
+Traceback (most recent call last):
+  File "main.py", line 238, in <module>
+    train()
+  File "main.py", line 208, in train
+    output, hidden = model(data, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 70, in forward
+    output, hidden = self.rnn(emb, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 282, in forward
+    print(" hx[l].shape ", hx[l].shape)
+AttributeError: 'tuple' object has no attribute 'shape'

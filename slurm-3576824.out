@@ -1,0 +1,6 @@
+Running on host gpu21.bc4.acrc.priv
+Slurm job ID is 3576824
+This job runs on the following machines:
+gpu21
+subLSTMCuda
+slurmstepd: error: *** JOB 3576824 ON gpu21 CANCELLED AT 2020-04-11T14:59:21 ***

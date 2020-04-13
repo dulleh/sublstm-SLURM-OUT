@@ -1,0 +1,46 @@
+Running on host gpu06.bc4.acrc.priv
+Slurm job ID is 3576952
+This job runs on the following machines:
+gpu06
+Requirement already satisfied: matplotlib in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (3.2.1)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (2.4.6)
+Requirement already satisfied: python-dateutil>=2.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (2.8.1)
+Requirement already satisfied: cycler>=0.10 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (1.1.0)
+Requirement already satisfied: numpy>=1.11 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (1.18.1)
+Requirement already satisfied: six>=1.5 in /mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/site-packages (from python-dateutil>=2.1->matplotlib) (1.12.0)
+Requirement already satisfied: setuptools in /mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib) (41.0.1)
+Requirement already satisfied: torchvision in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (0.5.0)
+Requirement already satisfied: torch==1.4.0 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torchvision) (1.4.0)
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torchvision) (1.18.1)
+Requirement already satisfied: six in /mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/site-packages (from torchvision) (1.12.0)
+Requirement already satisfied: pillow>=4.1.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torchvision) (7.0.0)
+Requirement already satisfied: ninja in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (1.9.0.post1)
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): still running...
+  Building wheel for torch-sublstm (setup.py): finished with status 'done'
+  Stored in directory: /mnt/storage/home/mk17486/.cache/pip/wheels/31/17/41/f7b13d3b73f5822baeb1d95f85487aba02a62f36c7b48952c9
+Successfully built torch-sublstm
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+Successfully installed torch-sublstm-0.1.0
+subLSTMCuda
+| epoch   1 |   200/ 1327 batches | lr 0.001000 | ms/batch 389.46 | loss  6.70 | ppl   812.58
+| epoch   1 |   400/ 1327 batches | lr 0.001000 | ms/batch 387.34 | loss  6.23 | ppl   505.40
+| epoch   1 |   600/ 1327 batches | lr 0.001000 | ms/batch 387.43 | loss  6.14 | ppl   463.81
+| epoch   1 |   800/ 1327 batches | lr 0.001000 | ms/batch 387.38 | loss  6.01 | ppl   408.80
+| epoch   1 |  1000/ 1327 batches | lr 0.001000 | ms/batch 387.23 | loss  5.98 | ppl   395.94
+| epoch   1 |  1200/ 1327 batches | lr 0.001000 | ms/batch 387.50 | loss  5.92 | ppl   373.42
+forward time:  29.80143976211548  backward time:  358.3909468650818
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 565.20s | valid loss  5.70 | valid ppl   299.79
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   287.85
+=========================================================================================

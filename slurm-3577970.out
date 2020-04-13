@@ -1,0 +1,18 @@
+Running on host gpu07.bc4.acrc.priv
+Slurm job ID is 3577970
+This job runs on the following machines:
+gpu07
+subLSTM
+| epoch   1 |   200/ 1327 batches | lr 0.001000 | ms/batch 74.58 | loss  6.70 | ppl   813.90
+| epoch   1 |   400/ 1327 batches | lr 0.001000 | ms/batch 74.18 | loss  6.22 | ppl   504.52
+| epoch   1 |   600/ 1327 batches | lr 0.001000 | ms/batch 70.74 | loss  6.14 | ppl   463.77
+| epoch   1 |   800/ 1327 batches | lr 0.001000 | ms/batch 74.82 | loss  6.01 | ppl   409.09
+| epoch   1 |  1000/ 1327 batches | lr 0.001000 | ms/batch 76.28 | loss  5.98 | ppl   395.55
+| epoch   1 |  1200/ 1327 batches | lr 0.001000 | ms/batch 74.81 | loss  5.92 | ppl   372.86
+forward time:  37.285637617111206  backward time:  51.66375160217285
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 103.06s | valid loss  5.70 | valid ppl   299.17
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   287.68
+=========================================================================================

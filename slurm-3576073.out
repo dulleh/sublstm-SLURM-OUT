@@ -1,0 +1,28 @@
+Running on host gpu09.bc4.acrc.priv
+Slurm job ID is 3576073
+This job runs on the following machines:
+gpu09
+| epoch   1 |   200/ 1327 batches | lr 0.001000 | ms/batch 389.39 | loss  6.70 | ppl   812.58
+| epoch   1 |   400/ 1327 batches | lr 0.001000 | ms/batch 387.20 | loss  6.23 | ppl   505.40
+| epoch   1 |   600/ 1327 batches | lr 0.001000 | ms/batch 387.01 | loss  6.14 | ppl   463.81
+| epoch   1 |   800/ 1327 batches | lr 0.001000 | ms/batch 386.99 | loss  6.01 | ppl   408.80
+| epoch   1 |  1000/ 1327 batches | lr 0.001000 | ms/batch 386.98 | loss  5.98 | ppl   395.94
+| epoch   1 |  1200/ 1327 batches | lr 0.001000 | ms/batch 386.87 | loss  5.92 | ppl   373.42
+Traceback (most recent call last):
+  File "main.py", line 239, in <module>
+    val_loss = evaluate(val_data)
+  File "main.py", line 168, in evaluate
+    output, hidden = model(data, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 70, in forward
+    output, hidden = self.rnn(emb, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 281, in forward
+    out, c = layer(outputs[time], hx[l])
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 90, in forward
+    return SubLSTMFunction.apply(input, self.weights, self.bias, *state)
+TypeError: forward() takes 6 positional arguments but 14 were given

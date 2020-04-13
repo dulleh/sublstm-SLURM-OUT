@@ -1,0 +1,27 @@
+Running on host gpu07.bc4.acrc.priv
+Slurm job ID is 3578006
+This job runs on the following machines:
+gpu07
+subLSTMCuda
+torch.Size([20, 650])
+torch.Size([20, 650])
+[torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 1300]), torch.Size([20, 4, 650]), torch.Size([2600, 1300]), torch.Size([20, 650])]
+torch.Size([20, 650])
+torch.Size([20, 650])
+[torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 1300]), torch.Size([20, 4, 650]), torch.Size([2600, 1300]), torch.Size([20, 650])]
+| epoch   1 |   200/ 1327 batches | lr 0.001000 | ms/batch 389.67 | loss  6.70 | ppl   812.58
+torch.Size([20, 650])
+torch.Size([20, 650])
+[torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 650]), torch.Size([20, 1300]), torch.Size([20, 4, 650]), torch.Size([2600, 1300]), torch.Size([20, 650])]
+| epoch   1 |   400/ 1327 batches | lr 0.001000 | ms/batch 387.18 | loss  6.23 | ppl   505.40
+| epoch   1 |   600/ 1327 batches | lr 0.001000 | ms/batch 386.99 | loss  6.14 | ppl   463.81
+| epoch   1 |   800/ 1327 batches | lr 0.001000 | ms/batch 386.96 | loss  6.01 | ppl   408.80
+| epoch   1 |  1000/ 1327 batches | lr 0.001000 | ms/batch 386.96 | loss  5.98 | ppl   395.94
+| epoch   1 |  1200/ 1327 batches | lr 0.001000 | ms/batch 386.87 | loss  5.92 | ppl   373.42
+forward time:  27.820622205734253  backward time:  360.24516010284424
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 564.65s | valid loss  5.70 | valid ppl   299.79
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   287.85
+=========================================================================================

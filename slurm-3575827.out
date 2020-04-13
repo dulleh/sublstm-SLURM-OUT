@@ -1,0 +1,14 @@
+Running on host gpu10.bc4.acrc.priv
+Slurm job ID is 3575827
+This job runs on the following machines:
+gpu10
+Traceback (most recent call last):
+  File "main.py", line 233, in <module>
+    train()
+  File "main.py", line 204, in train
+    output, hidden = model(data, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 71, in forward
+    output.transpose_(0,1).contiguous_()
+AttributeError: 'Tensor' object has no attribute 'contiguous_'

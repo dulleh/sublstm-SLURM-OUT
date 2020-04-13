@@ -1,0 +1,16 @@
+Running on host gpu25.bc4.acrc.priv
+Slurm job ID is 3575969
+This job runs on the following machines:
+gpu25
+| epoch   1 |   200/ 1327 batches | lr 0.001000 | ms/batch 24.04 | loss  6.57 | ppl   709.89
+| epoch   1 |   400/ 1327 batches | lr 0.001000 | ms/batch 23.66 | loss  6.07 | ppl   431.31
+| epoch   1 |   600/ 1327 batches | lr 0.001000 | ms/batch 23.78 | loss  5.92 | ppl   372.09
+| epoch   1 |   800/ 1327 batches | lr 0.001000 | ms/batch 23.65 | loss  5.75 | ppl   314.95
+| epoch   1 |  1000/ 1327 batches | lr 0.001000 | ms/batch 23.73 | loss  5.69 | ppl   295.11
+| epoch   1 |  1200/ 1327 batches | lr 0.001000 | ms/batch 23.81 | loss  5.59 | ppl   268.36
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 32.49s | valid loss  7.77 | valid ppl  2369.28
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  7.62 | test ppl  2046.01
+=========================================================================================

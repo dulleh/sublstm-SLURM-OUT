@@ -1,0 +1,16 @@
+Running on host gpu07.bc4.acrc.priv
+Slurm job ID is 3575964
+This job runs on the following machines:
+gpu07
+| epoch   1 |   200/ 1327 batches | lr 0.001000 | ms/batch 23.34 | loss  6.79 | ppl   889.87
+| epoch   1 |   400/ 1327 batches | lr 0.001000 | ms/batch 22.84 | loss  6.64 | ppl   766.02
+| epoch   1 |   600/ 1327 batches | lr 0.001000 | ms/batch 22.86 | loss  6.66 | ppl   777.08
+| epoch   1 |   800/ 1327 batches | lr 0.001000 | ms/batch 22.81 | loss  6.60 | ppl   733.95
+| epoch   1 |  1000/ 1327 batches | lr 0.001000 | ms/batch 22.90 | loss  6.60 | ppl   736.08
+| epoch   1 |  1200/ 1327 batches | lr 0.001000 | ms/batch 22.83 | loss  6.60 | ppl   735.62
+Traceback (most recent call last):
+  File "main.py", line 238, in <module>
+    val_loss = evaluate(val_data)
+  File "main.py", line 166, in evaluate
+    targets = target.t().contiguous()
+NameError: name 'target' is not defined

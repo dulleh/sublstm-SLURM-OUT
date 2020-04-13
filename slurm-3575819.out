@@ -1,0 +1,5 @@
+Running on host gpu10.bc4.acrc.priv
+Slurm job ID is 3575819
+This job runs on the following machines:
+gpu10
+slurmstepd: error: *** JOB 3575819 ON gpu10 CANCELLED AT 2020-04-10T15:54:46 ***

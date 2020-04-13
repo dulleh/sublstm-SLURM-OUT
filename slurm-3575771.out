@@ -1,0 +1,58 @@
+Running on host gpu07.bc4.acrc.priv
+Slurm job ID is 3575771
+This job runs on the following machines:
+gpu07
+input shape:  torch.Size([19, 20])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+i size:  torch.Size([20, 650])  h size:  torch.Size([20, 2600])
+input shape:  torch.Size([0, 20])
+Traceback (most recent call last):
+  File "main.py", line 231, in <module>
+    train()
+  File "main.py", line 202, in train
+    output, hidden = model(data, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 69, in forward
+    output, hidden = self.rnn(emb, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 298, in forward
+    out = torch.stack(outputs)
+RuntimeError: stack expects a non-empty TensorList

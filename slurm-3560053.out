@@ -1,0 +1,241 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3560053
+This job runs on the following machines:
+gpu32
+Requirement already satisfied: matplotlib in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (3.2.1)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (2.4.6)
+Requirement already satisfied: kiwisolver>=1.0.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (1.1.0)
+Requirement already satisfied: cycler>=0.10 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: python-dateutil>=2.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (2.8.1)
+Requirement already satisfied: numpy>=1.11 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (1.18.1)
+Requirement already satisfied: setuptools in /mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib) (41.0.1)
+Requirement already satisfied: six in /mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/site-packages (from cycler>=0.10->matplotlib) (1.12.0)
+Requirement already satisfied: torchvision in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (0.5.0)
+Requirement already satisfied: torch==1.4.0 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torchvision) (1.4.0)
+Requirement already satisfied: six in /mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/site-packages (from torchvision) (1.12.0)
+Requirement already satisfied: pillow>=4.1.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torchvision) (7.0.0)
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torchvision) (1.18.1)
+Requirement already satisfied: ninja in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (1.9.0.post1)
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): still running...
+  Building wheel for torch-sublstm (setup.py): finished with status 'done'
+  Stored in directory: /mnt/storage/home/mk17486/.cache/pip/wheels/31/17/41/f7b13d3b73f5822baeb1d95f85487aba02a62f36c7b48952c9
+Successfully built torch-sublstm
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+Successfully installed torch-sublstm-0.1.0
+cuda is available: True
+cudnn enabled: True
+Training LSTM model with parameters:
+	number of layers: 1
+	hidden units: 200
+	max epochs: 1
+	batch size: 50
+	optimizer: rmsprop, lr=0.0001, l2=0
+	using CUDA
+training epoch 1
+	[batches    20 /   960] loss: 2.30410
+	[batches    40 /   960] loss: 2.29892
+	[batches    60 /   960] loss: 2.30079
+	[batches    80 /   960] loss: 2.30127
+	[batches   100 /   960] loss: 2.30319
+	[batches   120 /   960] loss: 2.30412
+	[batches   140 /   960] loss: 2.30316
+	[batches   160 /   960] loss: 2.30218
+	[batches   180 /   960] loss: 2.30041
+	[batches   200 /   960] loss: 2.30402
+	[batches   220 /   960] loss: 2.30289
+	[batches   240 /   960] loss: 2.30191
+	[batches   260 /   960] loss: 2.30414
+	[batches   280 /   960] loss: 2.30132
+	[batches   300 /   960] loss: 2.29915
+	[batches   320 /   960] loss: 2.30120
+	[batches   340 /   960] loss: 2.29944
+	[batches   360 /   960] loss: 2.29939
+	[batches   380 /   960] loss: 2.30190
+	[batches   400 /   960] loss: 2.30494
+	[batches   420 /   960] loss: 2.30281
+	[batches   440 /   960] loss: 2.30078
+	[batches   460 /   960] loss: 2.30296
+	[batches   480 /   960] loss: 2.29947
+	[batches   500 /   960] loss: 2.30089
+	[batches   520 /   960] loss: 2.29943
+	[batches   540 /   960] loss: 2.30113
+	[batches   560 /   960] loss: 2.30053
+	[batches   580 /   960] loss: 2.30374
+	[batches   600 /   960] loss: 2.29947
+	[batches   620 /   960] loss: 2.30014
+	[batches   640 /   960] loss: 2.30006
+	[batches   660 /   960] loss: 2.29713
+	[batches   680 /   960] loss: 2.30253
+	[batches   700 /   960] loss: 2.30193
+	[batches   720 /   960] loss: 2.30263
+	[batches   740 /   960] loss: 2.30201
+	[batches   760 /   960] loss: 2.30326
+	[batches   780 /   960] loss: 2.30069
+	[batches   800 /   960] loss: 2.30038
+	[batches   820 /   960] loss: 2.30207
+	[batches   840 /   960] loss: 2.30093
+	[batches   860 /   960] loss: 2.30401
+	[batches   880 /   960] loss: 2.29905
+	[batches   900 /   960] loss: 2.30495
+	[batches   920 /   960] loss: 2.30164
+	[batches   940 /   960] loss: 2.29973
+	[batches   960 /   960] loss: 2.30322
+epoch 1 finished                 
+	total time 64.64119029045105                 
+	training_loss = 2.3016                 
+	validation_loss = 2.3019
+total time to train 64.64119029045105
+time spent in forward: 16.506376205943525
+time spent in backward: 16.100047352258116
+Traceback (most recent call last):
+  File "run.py", line 288, in <module>
+    with open(save_path + '/model.pt', 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/benchmarks/seqMNIST/results/LSTM_1_200/model.pt'
+cuda is available: True
+cudnn enabled: True
+Training subLSTMCuda model with parameters:
+	number of layers: 1
+	hidden units: 200
+	max epochs: 1
+	batch size: 50
+	optimizer: rmsprop, lr=0.0001, l2=0
+	using CUDA
+training epoch 1
+	[batches    20 /   960] loss: 2.31926
+	[batches    40 /   960] loss: 2.30398
+	[batches    60 /   960] loss: 2.30520
+	[batches    80 /   960] loss: 2.30274
+	[batches   100 /   960] loss: 2.30629
+	[batches   120 /   960] loss: 2.30648
+	[batches   140 /   960] loss: 2.30453
+	[batches   160 /   960] loss: 2.30450
+	[batches   180 /   960] loss: 2.30151
+	[batches   200 /   960] loss: 2.30641
+	[batches   220 /   960] loss: 2.30354
+	[batches   240 /   960] loss: 2.30385
+	[batches   260 /   960] loss: 2.30485
+	[batches   280 /   960] loss: 2.30296
+	[batches   300 /   960] loss: 2.29851
+	[batches   320 /   960] loss: 2.30452
+	[batches   340 /   960] loss: 2.30034
+	[batches   360 /   960] loss: 2.30085
+	[batches   380 /   960] loss: 2.30105
+	[batches   400 /   960] loss: 2.30776
+	[batches   420 /   960] loss: 2.30495
+	[batches   440 /   960] loss: 2.30216
+	[batches   460 /   960] loss: 2.30563
+	[batches   480 /   960] loss: 2.29941
+	[batches   500 /   960] loss: 2.30415
+	[batches   520 /   960] loss: 2.29989
+	[batches   540 /   960] loss: 2.30310
+	[batches   560 /   960] loss: 2.29968
+	[batches   580 /   960] loss: 2.30652
+	[batches   600 /   960] loss: 2.30111
+	[batches   620 /   960] loss: 2.30146
+	[batches   640 /   960] loss: 2.30049
+	[batches   660 /   960] loss: 2.29881
+	[batches   680 /   960] loss: 2.30406
+	[batches   700 /   960] loss: 2.30283
+	[batches   720 /   960] loss: 2.30331
+	[batches   740 /   960] loss: 2.30374
+	[batches   760 /   960] loss: 2.30315
+	[batches   780 /   960] loss: 2.30217
+	[batches   800 /   960] loss: 2.30223
+	[batches   820 /   960] loss: 2.30235
+	[batches   840 /   960] loss: 2.30149
+	[batches   860 /   960] loss: 2.30470
+	[batches   880 /   960] loss: 2.29952
+	[batches   900 /   960] loss: 2.30642
+	[batches   920 /   960] loss: 2.30322
+	[batches   940 /   960] loss: 2.30051
+	[batches   960 /   960] loss: 2.30466
+epoch 1 finished                 
+	total time 530.1926321983337                 
+	training_loss = 2.3034                 
+	validation_loss = 2.3027
+total time to train 530.1926321983337
+time spent in forward: 239.48722347663715
+time spent in nn.subLSTMCUdaCell.forward: 276.6438966291025
+time spent in backward: 214.41698546428233
+Traceback (most recent call last):
+  File "run.py", line 288, in <module>
+    with open(save_path + '/model.pt', 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/benchmarks/seqMNIST/results/subLSTMCuda_1_200/model.pt'
+cuda is available: True
+cudnn enabled: True
+Training subLSTM model with parameters:
+	number of layers: 1
+	hidden units: 200
+	max epochs: 1
+	batch size: 50
+	optimizer: rmsprop, lr=0.0001, l2=0
+	using CUDA
+training epoch 1
+	[batches    20 /   960] loss: 2.31926
+	[batches    40 /   960] loss: 2.30398
+	[batches    60 /   960] loss: 2.30520
+	[batches    80 /   960] loss: 2.30274
+	[batches   100 /   960] loss: 2.30629
+	[batches   120 /   960] loss: 2.30648
+	[batches   140 /   960] loss: 2.30453
+	[batches   160 /   960] loss: 2.30450
+	[batches   180 /   960] loss: 2.30151
+	[batches   200 /   960] loss: 2.30641
+	[batches   220 /   960] loss: 2.30354
+	[batches   240 /   960] loss: 2.30385
+	[batches   260 /   960] loss: 2.30485
+	[batches   280 /   960] loss: 2.30296
+	[batches   300 /   960] loss: 2.29851
+	[batches   320 /   960] loss: 2.30452
+	[batches   340 /   960] loss: 2.30034
+	[batches   360 /   960] loss: 2.30085
+	[batches   380 /   960] loss: 2.30105
+	[batches   400 /   960] loss: 2.30776
+	[batches   420 /   960] loss: 2.30495
+	[batches   440 /   960] loss: 2.30216
+	[batches   460 /   960] loss: 2.30563
+	[batches   480 /   960] loss: 2.29941
+	[batches   500 /   960] loss: 2.30415
+	[batches   520 /   960] loss: 2.29989
+	[batches   540 /   960] loss: 2.30310
+	[batches   560 /   960] loss: 2.29968
+	[batches   580 /   960] loss: 2.30652
+	[batches   600 /   960] loss: 2.30111
+	[batches   620 /   960] loss: 2.30146
+	[batches   640 /   960] loss: 2.30048
+	[batches   660 /   960] loss: 2.29881
+	[batches   680 /   960] loss: 2.30406
+	[batches   700 /   960] loss: 2.30283
+	[batches   720 /   960] loss: 2.30331
+	[batches   740 /   960] loss: 2.30374
+	[batches   760 /   960] loss: 2.30315
+	[batches   780 /   960] loss: 2.30217
+	[batches   800 /   960] loss: 2.30223
+	[batches   820 /   960] loss: 2.30235
+	[batches   840 /   960] loss: 2.30149
+	[batches   860 /   960] loss: 2.30470
+	[batches   880 /   960] loss: 2.29952
+	[batches   900 /   960] loss: 2.30642
+	[batches   920 /   960] loss: 2.30322
+	[batches   940 /   960] loss: 2.30051
+	[batches   960 /   960] loss: 2.30466
+epoch 1 finished                 
+	total time 677.1983568668365                 
+	training_loss = 2.3034                 
+	validation_loss = 2.3027
+total time to train 677.1983568668365
+time spent in forward: 257.09949580719694
+time spent in nn.subLSTMCUdaCell.forward: 291.8016896182671
+time spent in backward: 350.70514749828726
+Traceback (most recent call last):
+  File "run.py", line 288, in <module>
+    with open(save_path + '/model.pt', 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/benchmarks/seqMNIST/results/subLSTM_1_200/model.pt'

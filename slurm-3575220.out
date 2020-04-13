@@ -1,0 +1,5 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3575220
+This job runs on the following machines:
+gpu32
+slurmstepd: error: *** JOB 3575220 ON gpu32 CANCELLED AT 2020-04-09T21:13:59 ***
