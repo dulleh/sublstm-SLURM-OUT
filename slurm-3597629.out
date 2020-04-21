@@ -1,0 +1,30 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3597629
+This job runs on the following machines:
+gpu12
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): finished with status 'done'
+  Stored in directory: /mnt/storage/home/mk17486/.cache/pip/wheels/31/17/41/f7b13d3b73f5822baeb1d95f85487aba02a62f36c7b48952c9
+Successfully built torch-sublstm
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+Successfully installed torch-sublstm-0.1.0
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 13, in <module>
+    import model
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 9, in <module>
+    from subLSTM.basic.nn import SubLSTM
+  File "../../src/subLSTM/basic/nn.py", line 16, in <module>
+    torch.ops.load_library("sublstm_cuda.so")
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/_ops.py", line 106, in load_library
+    ctypes.CDLL(path)
+  File "/mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/ctypes/__init__.py", line 356, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/sublstm_cuda.so: cannot open shared object file: No such file or directory

@@ -1,0 +1,523 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3592254
+This job runs on the following machines:
+gpu32
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): finished with status 'error'
+  ERROR: Complete output from command /mnt/storage/software/languages/miniconda/miniconda3/bin/python -u -c 'import setuptools, tokenize;__file__='"'"'/tmp/pip-req-build-2odfbi73/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-artgsy38 --python-tag cp37:
+  ERROR: running bdist_wheel
+  running build
+  running build_py
+  creating build
+  creating build/lib.linux-x86_64-3.7
+  creating build/lib.linux-x86_64-3.7/subLSTM
+  copying src/subLSTM/__init__.py -> build/lib.linux-x86_64-3.7/subLSTM
+  running egg_info
+  creating src/torch_sublstm.egg-info
+  writing src/torch_sublstm.egg-info/PKG-INFO
+  writing dependency_links to src/torch_sublstm.egg-info/dependency_links.txt
+  writing requirements to src/torch_sublstm.egg-info/requires.txt
+  writing top-level names to src/torch_sublstm.egg-info/top_level.txt
+  writing manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+  reading manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+  writing manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+  creating build/lib.linux-x86_64-3.7/subLSTM/basic
+  copying src/subLSTM/basic/sublstm.cpp -> build/lib.linux-x86_64-3.7/subLSTM/basic
+  copying src/subLSTM/basic/sublstm_kernel.cu -> build/lib.linux-x86_64-3.7/subLSTM/basic
+  running build_ext
+  building 'sublstm_cuda' extension
+  creating build/temp.linux-x86_64-3.7
+  creating build/temp.linux-x86_64-3.7/src
+  creating build/temp.linux-x86_64-3.7/src/subLSTM
+  creating build/temp.linux-x86_64-3.7/src/subLSTM/basic
+  gcc -pthread -B /mnt/storage/software/languages/miniconda/miniconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/TH -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/THC -I/mnt/storage/software/libraries/nvidia/cuda-10.0/include -I/mnt/storage/software/languages/miniconda/miniconda3/include/python3.7m -c src/subLSTM/basic/sublstm.cpp -o build/temp.linux-x86_64-3.7/src/subLSTM/basic/sublstm.o -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=sublstm_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++11
+  cc1plus: warning: command line option '-Wstrict-prototypes' is valid for C/ObjC but not for C++
+  /mnt/storage/software/libraries/nvidia/cuda-10.0/bin/nvcc -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/TH -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/THC -I/mnt/storage/software/libraries/nvidia/cuda-10.0/include -I/mnt/storage/software/languages/miniconda/miniconda3/include/python3.7m -c src/subLSTM/basic/sublstm_kernel.cu -o build/temp.linux-x86_64-3.7/src/subLSTM/basic/sublstm_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=sublstm_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_60,code=sm_60 -std=c++11
+  src/subLSTM/basic/sublstm_kernel.cu(1): error: this declaration has no storage class or type specifier
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/cstddef(48): error: expected a ";"
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(90): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(93): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(105): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(128): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(148): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(148): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(170): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(174): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(184): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(188): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(192): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(196): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(200): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(205): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(210): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(214): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(218): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(222): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(226): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(230): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(234): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(238): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(242): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(246): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(295): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(299): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(303): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(307): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(324): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(328): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(332): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(336): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(340): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(351): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(355): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(360): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(364): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(371): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(375): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(375): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(386): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(390): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(390): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(402): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(402): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(408): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(408): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(414): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(414): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(420): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(424): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(428): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(432): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(436): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(440): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(444): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(448): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(452): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(456): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(460): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(464): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(468): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(472): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(476): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(480): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(484): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(488): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(492): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(496): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(500): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(504): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(508): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(512): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(516): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(522): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(526): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(582): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(582): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(586): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(590): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(607): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(612): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(620): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(624): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(629): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(633): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(638): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(638): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(644): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(644): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(650): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(650): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(657): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(657): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(663): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(663): error: not a class or struct name
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(669): error: integral_constant is not a template
+  
+  /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(669): error: not a class or struct name
+  
+  Error limit reached.
+  100 errors detected in the compilation of "/tmp/tmpxft_00000df2_00000000-6_sublstm_kernel.cpp1.ii".
+  Compilation terminated.
+  error: command '/mnt/storage/software/libraries/nvidia/cuda-10.0/bin/nvcc' failed with exit status 1
+  ----------------------------------------
+  ERROR: Failed building wheel for torch-sublstm
+  Running setup.py clean for torch-sublstm
+Failed to build torch-sublstm
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py install for torch-sublstm: started
+    Running setup.py install for torch-sublstm: finished with status 'error'
+    ERROR: Complete output from command /mnt/storage/software/languages/miniconda/miniconda3/bin/python -u -c 'import setuptools, tokenize;__file__='"'"'/tmp/pip-req-build-2odfbi73/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-i1xjh1c2/install-record.txt --single-version-externally-managed --compile --user --prefix=:
+    ERROR: running install
+    running build
+    running build_py
+    creating build
+    creating build/lib.linux-x86_64-3.7
+    creating build/lib.linux-x86_64-3.7/subLSTM
+    copying src/subLSTM/__init__.py -> build/lib.linux-x86_64-3.7/subLSTM
+    running egg_info
+    writing src/torch_sublstm.egg-info/PKG-INFO
+    writing dependency_links to src/torch_sublstm.egg-info/dependency_links.txt
+    writing requirements to src/torch_sublstm.egg-info/requires.txt
+    writing top-level names to src/torch_sublstm.egg-info/top_level.txt
+    reading manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+    writing manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+    creating build/lib.linux-x86_64-3.7/subLSTM/basic
+    copying src/subLSTM/basic/sublstm.cpp -> build/lib.linux-x86_64-3.7/subLSTM/basic
+    copying src/subLSTM/basic/sublstm_kernel.cu -> build/lib.linux-x86_64-3.7/subLSTM/basic
+    running build_ext
+    building 'sublstm_cuda' extension
+    creating build/temp.linux-x86_64-3.7
+    creating build/temp.linux-x86_64-3.7/src
+    creating build/temp.linux-x86_64-3.7/src/subLSTM
+    creating build/temp.linux-x86_64-3.7/src/subLSTM/basic
+    gcc -pthread -B /mnt/storage/software/languages/miniconda/miniconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/TH -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/THC -I/mnt/storage/software/libraries/nvidia/cuda-10.0/include -I/mnt/storage/software/languages/miniconda/miniconda3/include/python3.7m -c src/subLSTM/basic/sublstm.cpp -o build/temp.linux-x86_64-3.7/src/subLSTM/basic/sublstm.o -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=sublstm_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++11
+    cc1plus: warning: command line option '-Wstrict-prototypes' is valid for C/ObjC but not for C++
+    /mnt/storage/software/libraries/nvidia/cuda-10.0/bin/nvcc -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/TH -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/THC -I/mnt/storage/software/libraries/nvidia/cuda-10.0/include -I/mnt/storage/software/languages/miniconda/miniconda3/include/python3.7m -c src/subLSTM/basic/sublstm_kernel.cu -o build/temp.linux-x86_64-3.7/src/subLSTM/basic/sublstm_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=sublstm_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_60,code=sm_60 -std=c++11
+    src/subLSTM/basic/sublstm_kernel.cu(1): error: this declaration has no storage class or type specifier
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/cstddef(48): error: expected a ";"
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(90): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(93): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(105): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(128): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(148): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(148): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(170): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(174): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(184): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(188): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(192): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(196): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(200): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(205): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(210): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(214): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(218): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(222): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(226): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(230): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(234): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(238): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(242): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(246): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(295): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(299): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(303): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(307): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(324): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(328): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(332): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(336): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(340): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(351): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(355): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(360): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(364): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(371): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(375): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(375): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(386): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(390): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(390): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(402): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(402): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(408): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(408): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(414): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(414): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(420): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(424): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(428): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(432): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(436): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(440): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(444): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(448): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(452): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(456): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(460): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(464): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(468): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(472): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(476): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(480): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(484): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(488): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(492): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(496): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(500): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(504): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(508): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(512): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(516): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(522): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(526): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(582): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(582): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(586): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(590): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(607): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(612): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(620): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(624): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(629): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(633): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(638): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(638): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(644): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(644): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(650): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(650): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(657): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(657): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(663): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(663): error: not a class or struct name
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(669): error: integral_constant is not a template
+    
+    /mnt/storage/easybuild/software/GCCcore/5.4.0/include/c++/5.4.0/type_traits(669): error: not a class or struct name
+    
+    Error limit reached.
+    100 errors detected in the compilation of "/tmp/tmpxft_00000e52_00000000-6_sublstm_kernel.cpp1.ii".
+    Compilation terminated.
+    error: command '/mnt/storage/software/libraries/nvidia/cuda-10.0/bin/nvcc' failed with exit status 1
+    ----------------------------------------
+  Rolling back uninstall of torch-sublstm
+  Moving to /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/subLSTM/
+   from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/~=bLSTM
+  Moving to /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so
+   from /tmp/pip-uninstall-0td4s_sf/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so
+  Moving to /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch_sublstm-0.1.0.dist-info/
+   from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/~=rch_sublstm-0.1.0.dist-info
+ERROR: Command "/mnt/storage/software/languages/miniconda/miniconda3/bin/python -u -c 'import setuptools, tokenize;__file__='"'"'/tmp/pip-req-build-2odfbi73/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-i1xjh1c2/install-record.txt --single-version-externally-managed --compile --user --prefix=" failed with error code 1 in /tmp/pip-req-build-2odfbi73/
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 231, in <module>
+    train()
+  File "main.py", line 191, in train
+    output, hidden = model(data, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 70, in forward
+    output, hidden = self.rnn(emb, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 291, in forward
+    out, c = layer(outputs[time], hx[l])
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 98, in forward
+    return SubLSTMFunction.apply(input, self.weights, self.bias, *state)
+  File "../../src/subLSTM/basic/nn.py", line 29, in forward
+    old_cell)
+RuntimeError: old_cell must be contiguous (forward at src/subLSTM/basic/sublstm.cpp:40)
+frame #0: c10::Error::Error(c10::SourceLocation, std::string const&) + 0x33 (0x2b56c701b193 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #1: forward(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor) + 0x9e3 (0x2b57483d92e3 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so)
+frame #2: <unknown function> + 0x54523 (0x2b57483e4523 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so)
+frame #3: <unknown function> + 0x5477e (0x2b57483e477e in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so)
+frame #4: <unknown function> + 0x5a298 (0x2b57483ea298 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so)
+<omitting python frames>
+frame #9: THPFunction_apply(_object*, _object*) + 0xa7f (0x2b56faee33ef in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #53: __libc_start_main + 0xf5 (0x2b56b9e81b35 in /usr/lib64/libc.so.6)
+

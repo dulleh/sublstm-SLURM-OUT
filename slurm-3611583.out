@@ -1,0 +1,28 @@
+Running on host gpu06.bc4.acrc.priv
+Slurm job ID is 3611583
+This job runs on the following machines:
+gpu06
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 239, in <module>
+    train()
+  File "main.py", line 205, in train
+    loss.backward()
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/autograd/__init__.py", line 99, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/autograd/function.py", line 77, in apply
+    return self._forward_cls.backward(self, *args)
+  File "../../src/subLSTM/basic/nn.py", line 41, in backward
+    saved_vars = ctx.other_varies
+AttributeError: 'SubLSTMFunctionBackward' object has no attribute 'other_varies'

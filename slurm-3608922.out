@@ -1,0 +1,46 @@
+Running on host gpu11.bc4.acrc.priv
+Slurm job ID is 3608922
+This job runs on the following machines:
+gpu11
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+def forward(self,
+    input: Tensor,
+    hidden: Optional[List[Tuple[Tensor, Tensor]]]) -> Tuple[Tensor, List[Tuple[Tensor, Tensor]]]:
+  emb = (self.drop).forward((self.encoder).forward(input, ), )
+  output, new_hidden, = (self.rnn).forward(emb, hidden, )
+  output0 = (self.drop).forward(output, )
+  _0 = torch.mul(torch.size(output0, 0), torch.size(output0, 1))
+  _1 = self.decoder
+  _2 = torch.reshape(output0, [_0, torch.size(output0, 2)])
+  decoded = (_1).forward(_2, )
+  _3 = [torch.size(output0, 0), torch.size(output0, 1), torch.size(decoded, 1)]
+  decoded0 = torch.view(decoded, _3)
+  return (decoded0, new_hidden)
+
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 67.04s | valid loss  5.71 | valid ppl   300.38
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   2 | time: 66.12s | valid loss  5.59 | valid ppl   267.54
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   3 | time: 66.08s | valid loss  5.53 | valid ppl   251.49
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   4 | time: 66.06s | valid loss  5.48 | valid ppl   240.94
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   5 | time: 66.07s | valid loss  5.44 | valid ppl   231.21
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.39 | test ppl   219.50
+=========================================================================================

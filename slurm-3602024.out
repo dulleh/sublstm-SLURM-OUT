@@ -1,0 +1,28 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3602024
+This job runs on the following machines:
+gpu32
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+torch.Size([35, 20])
+torch.Size([33, 20])
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 69.97s | valid loss  5.70 | valid ppl   298.21
+-----------------------------------------------------------------------------------------
+Cannot yet save a CUDA model.Must make subLSTM be entirely traced
+Traceback (most recent call last):
+  File "main.py", line 264, in <module>
+    model = torch.load(f)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/serialization.py", line 526, in load
+    if _is_zipfile(opened_file):
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/serialization.py", line 76, in _is_zipfile
+    if ord(magic_byte) != ord(read_byte):
+TypeError: ord() expected a character, but string of length 0 found

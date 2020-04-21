@@ -1,0 +1,45 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3592244
+This job runs on the following machines:
+gpu32
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): still running...
+  Building wheel for torch-sublstm (setup.py): finished with status 'done'
+  Stored in directory: /mnt/storage/home/mk17486/.cache/pip/wheels/31/17/41/f7b13d3b73f5822baeb1d95f85487aba02a62f36c7b48952c9
+Successfully built torch-sublstm
+Installing collected packages: torch-sublstm
+Successfully installed torch-sublstm-0.1.0
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 231, in <module>
+    train()
+  File "main.py", line 191, in train
+    output, hidden = model(data, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 70, in forward
+    output, hidden = self.rnn(emb, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 291, in forward
+    out, c = layer(outputs[time], hx[l])
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 98, in forward
+    return SubLSTMFunction.apply(input, self.weights, self.bias, *state)
+  File "../../src/subLSTM/basic/nn.py", line 29, in forward
+    old_cell)
+RuntimeError: old_cell must be contiguous (forward at src/subLSTM/basic/sublstm.cpp:40)
+frame #0: c10::Error::Error(c10::SourceLocation, std::string const&) + 0x33 (0x2acf6a6f7193 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #1: forward(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor) + 0x9e3 (0x2acf6ca0a2e3 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so)
+frame #2: <unknown function> + 0x54523 (0x2acf6ca15523 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so)
+frame #3: <unknown function> + 0x5477e (0x2acf6ca1577e in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so)
+frame #4: <unknown function> + 0x5a298 (0x2acf6ca1b298 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so)
+<omitting python frames>
+frame #9: THPFunction_apply(_object*, _object*) + 0xa7f (0x2acf1f4fe3ef in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #53: __libc_start_main + 0xf5 (0x2acede4e3b35 in /usr/lib64/libc.so.6)
+

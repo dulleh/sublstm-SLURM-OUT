@@ -1,0 +1,39 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3592904
+This job runs on the following machines:
+gpu32
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): still running...
+  Building wheel for torch-sublstm (setup.py): finished with status 'done'
+  Stored in directory: /mnt/storage/home/mk17486/.cache/pip/wheels/31/17/41/f7b13d3b73f5822baeb1d95f85487aba02a62f36c7b48952c9
+Successfully built torch-sublstm
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+Successfully installed torch-sublstm-0.1.0
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 231, in <module>
+    train()
+  File "main.py", line 191, in train
+    output, hidden = model(data, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 70, in forward
+    output, hidden = self.rnn(emb, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 292, in forward
+    out, c = layer(outputs[time], hx[l])
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 99, in forward
+    return SubLSTMFunction.apply(input, self.weights, self.bias, *state)
+  File "../../src/subLSTM/basic/nn.py", line 30, in forward
+    outputs = list(stacked_outputs.unbind()).append(X).append(gates)
+AttributeError: 'NoneType' object has no attribute 'append'

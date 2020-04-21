@@ -1,0 +1,49 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3597792
+This job runs on the following machines:
+gpu12
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 98, in <module>
+    model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 35, in __init__
+    dropout=dropout)
+  File "../../src/subLSTM/basic/nn.py", line 215, in __init__
+    traced_layer = torch.jit.trace(layer, (INPUT,STATE))
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/__init__.py", line 882, in trace
+    check_tolerance, _force_outplace, _module_class)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/__init__.py", line 1034, in trace_module
+    module._c._create_method_from_trace(method_name, func, example_inputs, var_lookup_fn, _force_outplace)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 530, in __call__
+    result = self._slow_forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 516, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 89, in forward
+    return SubLSTMFunction.apply(input, self.weights, self.bias, *state)
+  File "../../src/subLSTM/basic/nn.py", line 27, in forward
+    old_cell)
+RuntimeError: Found an unsupported argument type c10::List<at::Tensor> in the JIT tracer. File a bug report. (addOutput at /pytorch/torch/csrc/jit/tracer.h:319)
+frame #0: c10::Error::Error(c10::SourceLocation, std::string const&) + 0x33 (0x2ad1aa290193 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x40eb05d (0x2ad163dab05d in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #2: <unknown function> + 0x40e9150 (0x2ad163da9150 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #3: <unknown function> + 0x6df26f (0x2ad15f33c26f in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #4: <unknown function> + 0x6aa484 (0x2ad15f307484 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #5: <unknown function> + 0x295a74 (0x2ad15eef2a74 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #10: THPFunction_apply(_object*, _object*) + 0xa7f (0x2ad15f2c43ef in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #27: <unknown function> + 0x75ce03 (0x2ad15f3b9e03 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #28: torch::jit::tracer::trace(std::vector<c10::IValue, std::allocator<c10::IValue> >, std::function<std::vector<c10::IValue, std::allocator<c10::IValue> > (std::vector<c10::IValue, std::allocator<c10::IValue> >)> const&, std::function<std::string (at::Tensor const&)>, bool, torch::jit::script::Module*) + 0x4e6 (0x2ad163fd79e6 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #29: <unknown function> + 0x759091 (0x2ad15f3b6091 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #30: <unknown function> + 0x7728e2 (0x2ad15f3cf8e2 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #31: <unknown function> + 0x295a74 (0x2ad15eef2a74 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #61: __libc_start_main + 0xf5 (0x2ad11de87b35 in /usr/lib64/libc.so.6)
+

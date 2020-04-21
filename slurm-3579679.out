@@ -1,0 +1,12 @@
+Running on host gpu07.bc4.acrc.priv
+Slurm job ID is 3579679
+This job runs on the following machines:
+gpu07
+subLSTM
+==22741== NVPROF is profiling process 22741, command: python main.py --model=subLSTM --cuda --emsize 650 --nhid 650 --dropout 0.5 --epochs 1 --lr 0.001 --optim adam
+==22741== Warning: Profiling results might be incorrect with current version of nvcc compiler used to compile cuda app. Compile with nvcc compiler 9.0 or later version to get correct profiling results. Ignore this warning if code is already compiled with the recommended nvcc version 
+slurmstepd: error: Job 3579679 exceeded memory limit (4098836 > 4096000), being killed
+slurmstepd: error: Exceeded job memory limit
+slurmstepd: error: *** JOB 3579679 ON gpu07 CANCELLED AT 2020-04-13T13:00:40 ***
+==22741== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.
+==22741== Generated result file: /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/py-prof.nvvp

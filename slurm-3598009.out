@@ -1,0 +1,34 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3598009
+This job runs on the following machines:
+gpu12
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 98, in <module>
+    model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 35, in __init__
+    dropout=dropout)
+  File "../../src/subLSTM/basic/nn.py", line 215, in __init__
+    traced_layer = torch.jit.trace(layer, (INPUT,STATE))
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/__init__.py", line 882, in trace
+    check_tolerance, _force_outplace, _module_class)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/__init__.py", line 1034, in trace_module
+    module._c._create_method_from_trace(method_name, func, example_inputs, var_lookup_fn, _force_outplace)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 530, in __call__
+    result = self._slow_forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 516, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 89, in forward
+    return SubLSTMFunction.apply(input, self.weights, self.bias, *state)
+  File "../../src/subLSTM/basic/nn.py", line 27, in forward
+    old_cell)
+RuntimeError: size mismatch, m1: [650 x 8], m2: [1300 x 2600] at /pytorch/aten/src/THC/generic/THCTensorMathBlas.cu:290

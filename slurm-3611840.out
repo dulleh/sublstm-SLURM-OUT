@@ -1,0 +1,53 @@
+Running on host gpu06.bc4.acrc.priv
+Slurm job ID is 3611840
+This job runs on the following machines:
+gpu06
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+LSTM
+/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/rnn.py:50: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.5 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 22.81s | valid loss  5.38 | valid ppl   217.48
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   2 | time: 22.78s | valid loss  5.17 | valid ppl   175.07
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   3 | time: 22.72s | valid loss  5.04 | valid ppl   155.14
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   4 | time: 22.68s | valid loss  4.97 | valid ppl   144.20
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   5 | time: 22.73s | valid loss  4.92 | valid ppl   136.78
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  4.87 | test ppl   130.08
+=========================================================================================
+subLSTMCuda
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 35.58s | valid loss  5.85 | valid ppl   346.52
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   2 | time: 35.49s | valid loss  6.76 | valid ppl   866.70
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   3 | time: 35.57s | valid loss  6.69 | valid ppl   805.60
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   4 | time: 35.57s | valid loss  6.56 | valid ppl   704.91
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   5 | time: 35.56s | valid loss  5.66 | valid ppl   287.28
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.59 | test ppl   268.74
+=========================================================================================

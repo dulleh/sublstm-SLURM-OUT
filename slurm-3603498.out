@@ -1,0 +1,53 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3603498
+This job runs on the following machines:
+gpu32
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+graph(%self : __torch__.subLSTM.basic.nn.SubLSTMCudaCell,
+      %input.1 : Tensor,
+      %state.1 : (Tensor, Tensor)):
+  %4 : Tensor = prim::GetAttr[name="weights"](%self)
+  %5 : Tensor = prim::GetAttr[name="bias"](%self)
+  %7 : Tensor, %8 : Tensor = prim::TupleUnpack(%state.1)
+  %9 : Tensor[] = sublstm::apply(%input.1, %4, %5, %7, %8) # ../../src/subLSTM/basic/nn.py:95:26
+  %new_h.1 : Tensor, %new_cell.1 : Tensor = prim::ListUnpack(%9)
+  %14 : (Tensor, Tensor) = prim::TupleConstruct(%new_h.1, %new_cell.1)
+  return (%14)
+
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 34.86s | valid loss  5.61 | valid ppl   273.96
+-----------------------------------------------------------------------------------------
+Cannot yet save a CUDA model.Must make subLSTM be entirely traced
+-----------------------------------------------------------------------------------------
+| end of epoch   2 | time: 34.70s | valid loss  5.49 | valid ppl   241.23
+-----------------------------------------------------------------------------------------
+Cannot yet save a CUDA model.Must make subLSTM be entirely traced
+-----------------------------------------------------------------------------------------
+| end of epoch   3 | time: 34.69s | valid loss  5.41 | valid ppl   223.99
+-----------------------------------------------------------------------------------------
+Cannot yet save a CUDA model.Must make subLSTM be entirely traced
+-----------------------------------------------------------------------------------------
+| end of epoch   4 | time: 34.69s | valid loss  5.36 | valid ppl   213.09
+-----------------------------------------------------------------------------------------
+Cannot yet save a CUDA model.Must make subLSTM be entirely traced
+-----------------------------------------------------------------------------------------
+| end of epoch   5 | time: 34.68s | valid loss  5.32 | valid ppl   204.45
+-----------------------------------------------------------------------------------------
+Cannot yet save a CUDA model.Must make subLSTM be entirely traced
+Traceback (most recent call last):
+  File "main.py", line 257, in <module>
+    model = torch.load(f)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/serialization.py", line 526, in load
+    if _is_zipfile(opened_file):
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/serialization.py", line 76, in _is_zipfile
+    if ord(magic_byte) != ord(read_byte):
+TypeError: ord() expected a character, but string of length 0 found

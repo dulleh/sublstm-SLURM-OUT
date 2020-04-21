@@ -1,0 +1,31 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3589203
+This job runs on the following machines:
+gpu32
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): still running...
+  Building wheel for torch-sublstm (setup.py): finished with status 'done'
+  Stored in directory: /mnt/storage/home/mk17486/.cache/pip/wheels/31/17/41/f7b13d3b73f5822baeb1d95f85487aba02a62f36c7b48952c9
+Successfully built torch-sublstm
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+Successfully installed torch-sublstm-0.1.0
+subLSTMCuda
+| epoch   1 |   200/ 1327 batches | lr 0.001000 | ms/batch 387.58 | loss  6.70 | ppl   814.33
+| epoch   1 |   400/ 1327 batches | lr 0.001000 | ms/batch 385.40 | loss  6.22 | ppl   503.00
+| epoch   1 |   600/ 1327 batches | lr 0.001000 | ms/batch 390.12 | loss  6.14 | ppl   463.69
+| epoch   1 |   800/ 1327 batches | lr 0.001000 | ms/batch 409.60 | loss  6.02 | ppl   409.86
+| epoch   1 |  1000/ 1327 batches | lr 0.001000 | ms/batch 413.12 | loss  5.98 | ppl   395.12
+| epoch   1 |  1200/ 1327 batches | lr 0.001000 | ms/batch 414.32 | loss  5.92 | ppl   373.40
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 536.75s | valid loss  5.70 | valid ppl   298.14
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   285.75
+=========================================================================================

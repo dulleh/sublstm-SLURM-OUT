@@ -1,0 +1,8 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3584327
+This job runs on the following machines:
+gpu12
+subLSTM
+forward time:  38.20422005653381  backward time:  53.442376375198364
+subLSTMCuda
+forward time:  26.8843834400177  backward time:  361.5744318962097

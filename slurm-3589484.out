@@ -1,0 +1,37 @@
+Running on host gpu23.bc4.acrc.priv
+Slurm job ID is 3589484
+This job runs on the following machines:
+gpu23
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): still running...
+  Building wheel for torch-sublstm (setup.py): finished with status 'done'
+  Stored in directory: /mnt/storage/home/mk17486/.cache/pip/wheels/31/17/41/f7b13d3b73f5822baeb1d95f85487aba02a62f36c7b48952c9
+Successfully built torch-sublstm
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+Successfully installed torch-sublstm-0.1.0
+subLSTMCuda
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 71.13s | valid loss  5.70 | valid ppl   298.14
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   2 | time: 71.57s | valid loss  5.57 | valid ppl   262.75
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   3 | time: 71.14s | valid loss  5.50 | valid ppl   245.79
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   4 | time: 70.77s | valid loss  5.45 | valid ppl   233.41
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   5 | time: 72.42s | valid loss  5.40 | valid ppl   222.46
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.36 | test ppl   211.78
+=========================================================================================

@@ -1,0 +1,5 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3604348
+This job runs on the following machines:
+gpu12
+slurmstepd: error: *** JOB 3604348 ON gpu12 CANCELLED AT 2020-04-19T22:57:52 ***

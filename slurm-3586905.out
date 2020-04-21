@@ -1,0 +1,182 @@
+Running on host gpu17.bc4.acrc.priv
+Slurm job ID is 3586905
+This job runs on the following machines:
+gpu17
+Requirement already satisfied: matplotlib in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (3.2.1)
+Requirement already satisfied: cycler>=0.10 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (2.4.6)
+Requirement already satisfied: kiwisolver>=1.0.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (1.1.0)
+Requirement already satisfied: python-dateutil>=2.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (2.8.1)
+Requirement already satisfied: numpy>=1.11 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from matplotlib) (1.18.1)
+Requirement already satisfied: six in /mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/site-packages (from cycler>=0.10->matplotlib) (1.12.0)
+Requirement already satisfied: setuptools in /mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib) (41.0.1)
+Requirement already satisfied: torchvision in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (0.5.0)
+Requirement already satisfied: six in /mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/site-packages (from torchvision) (1.12.0)
+Requirement already satisfied: pillow>=4.1.1 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torchvision) (7.0.0)
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torchvision) (1.18.1)
+Requirement already satisfied: torch==1.4.0 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torchvision) (1.4.0)
+Requirement already satisfied: ninja in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (1.9.0.post1)
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): still running...
+  Building wheel for torch-sublstm (setup.py): finished with status 'error'
+  ERROR: Complete output from command /mnt/storage/software/languages/miniconda/miniconda3/bin/python -u -c 'import setuptools, tokenize;__file__='"'"'/tmp/pip-req-build-al54c6fh/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-fup665wo --python-tag cp37:
+  ERROR: running bdist_wheel
+  running build
+  running build_py
+  creating build
+  creating build/lib.linux-x86_64-3.7
+  creating build/lib.linux-x86_64-3.7/subLSTM
+  copying src/subLSTM/__init__.py -> build/lib.linux-x86_64-3.7/subLSTM
+  running egg_info
+  creating src/torch_sublstm.egg-info
+  writing src/torch_sublstm.egg-info/PKG-INFO
+  writing dependency_links to src/torch_sublstm.egg-info/dependency_links.txt
+  writing requirements to src/torch_sublstm.egg-info/requires.txt
+  writing top-level names to src/torch_sublstm.egg-info/top_level.txt
+  writing manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+  reading manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+  writing manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+  creating build/lib.linux-x86_64-3.7/subLSTM/basic
+  copying src/subLSTM/basic/sublstm.cpp -> build/lib.linux-x86_64-3.7/subLSTM/basic
+  copying src/subLSTM/basic/sublstm_kernel.cu -> build/lib.linux-x86_64-3.7/subLSTM/basic
+  running build_ext
+  building 'sublstm_cuda' extension
+  creating build/temp.linux-x86_64-3.7
+  creating build/temp.linux-x86_64-3.7/src
+  creating build/temp.linux-x86_64-3.7/src/subLSTM
+  creating build/temp.linux-x86_64-3.7/src/subLSTM/basic
+  gcc -pthread -B /mnt/storage/software/languages/miniconda/miniconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/TH -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/THC -I/mnt/storage/software/libraries/nvidia/cuda-10.0/include -I/mnt/storage/software/languages/miniconda/miniconda3/include/python3.7m -c src/subLSTM/basic/sublstm.cpp -o build/temp.linux-x86_64-3.7/src/subLSTM/basic/sublstm.o -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=sublstm_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++11
+  cc1plus: warning: command line option '-Wstrict-prototypes' is valid for C/ObjC but not for C++
+  /mnt/storage/software/libraries/nvidia/cuda-10.0/bin/nvcc -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/TH -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/THC -I/mnt/storage/software/libraries/nvidia/cuda-10.0/include -I/mnt/storage/software/languages/miniconda/miniconda3/include/python3.7m -c src/subLSTM/basic/sublstm_kernel.cu -o build/temp.linux-x86_64-3.7/src/subLSTM/basic/sublstm_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=sublstm_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_60,code=sm_60 -std=c++11
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/c10/core/TensorTypeSet.h(44): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(14): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(15): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(15): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(15): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(18): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(19): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(19): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(19): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(23): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(24): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(24): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(24): warning: integer conversion resulted in a change of sign
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/autograd/profiler.h(97): warning: attribute "__visibility__" does not apply here
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/autograd/profiler.h(112): warning: attribute "__visibility__" does not apply here
+  
+  /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/enum.h(179): warning: statement is unreachable
+  
+  src/subLSTM/basic/sublstm_kernel.cu(45): error: identifier "X" is undefined
+  
+  src/subLSTM/basic/sublstm_kernel.cu(45): error: identifier "weights" is undefined
+  
+  src/subLSTM/basic/sublstm_kernel.cu(50): error: identifier "bias" is undefined
+  
+  3 errors detected in the compilation of "/tmp/tmpxft_000065f7_00000000-6_sublstm_kernel.cpp1.ii".
+  error: command '/mnt/storage/software/libraries/nvidia/cuda-10.0/bin/nvcc' failed with exit status 1
+  ----------------------------------------
+  ERROR: Failed building wheel for torch-sublstm
+  Running setup.py clean for torch-sublstm
+Failed to build torch-sublstm
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py install for torch-sublstm: started
+    Running setup.py install for torch-sublstm: finished with status 'error'
+    ERROR: Complete output from command /mnt/storage/software/languages/miniconda/miniconda3/bin/python -u -c 'import setuptools, tokenize;__file__='"'"'/tmp/pip-req-build-al54c6fh/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-gkjaj1ed/install-record.txt --single-version-externally-managed --compile --user --prefix=:
+    ERROR: running install
+    running build
+    running build_py
+    creating build
+    creating build/lib.linux-x86_64-3.7
+    creating build/lib.linux-x86_64-3.7/subLSTM
+    copying src/subLSTM/__init__.py -> build/lib.linux-x86_64-3.7/subLSTM
+    running egg_info
+    writing src/torch_sublstm.egg-info/PKG-INFO
+    writing dependency_links to src/torch_sublstm.egg-info/dependency_links.txt
+    writing requirements to src/torch_sublstm.egg-info/requires.txt
+    writing top-level names to src/torch_sublstm.egg-info/top_level.txt
+    reading manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+    writing manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+    creating build/lib.linux-x86_64-3.7/subLSTM/basic
+    copying src/subLSTM/basic/sublstm.cpp -> build/lib.linux-x86_64-3.7/subLSTM/basic
+    copying src/subLSTM/basic/sublstm_kernel.cu -> build/lib.linux-x86_64-3.7/subLSTM/basic
+    running build_ext
+    building 'sublstm_cuda' extension
+    creating build/temp.linux-x86_64-3.7
+    creating build/temp.linux-x86_64-3.7/src
+    creating build/temp.linux-x86_64-3.7/src/subLSTM
+    creating build/temp.linux-x86_64-3.7/src/subLSTM/basic
+    gcc -pthread -B /mnt/storage/software/languages/miniconda/miniconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/TH -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/THC -I/mnt/storage/software/libraries/nvidia/cuda-10.0/include -I/mnt/storage/software/languages/miniconda/miniconda3/include/python3.7m -c src/subLSTM/basic/sublstm.cpp -o build/temp.linux-x86_64-3.7/src/subLSTM/basic/sublstm.o -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=sublstm_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++11
+    cc1plus: warning: command line option '-Wstrict-prototypes' is valid for C/ObjC but not for C++
+    /mnt/storage/software/libraries/nvidia/cuda-10.0/bin/nvcc -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/TH -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/THC -I/mnt/storage/software/libraries/nvidia/cuda-10.0/include -I/mnt/storage/software/languages/miniconda/miniconda3/include/python3.7m -c src/subLSTM/basic/sublstm_kernel.cu -o build/temp.linux-x86_64-3.7/src/subLSTM/basic/sublstm_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=sublstm_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_60,code=sm_60 -std=c++11
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/c10/core/TensorTypeSet.h(44): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(14): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(15): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(15): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(15): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(18): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(19): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(19): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(19): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(23): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(24): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(24): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/functional/padding.h(24): warning: integer conversion resulted in a change of sign
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/autograd/profiler.h(97): warning: attribute "__visibility__" does not apply here
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/autograd/profiler.h(112): warning: attribute "__visibility__" does not apply here
+    
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/enum.h(179): warning: statement is unreachable
+    
+    src/subLSTM/basic/sublstm_kernel.cu(45): error: identifier "X" is undefined
+    
+    src/subLSTM/basic/sublstm_kernel.cu(45): error: identifier "weights" is undefined
+    
+    src/subLSTM/basic/sublstm_kernel.cu(50): error: identifier "bias" is undefined
+    
+    3 errors detected in the compilation of "/tmp/tmpxft_00006734_00000000-6_sublstm_kernel.cpp1.ii".
+    error: command '/mnt/storage/software/libraries/nvidia/cuda-10.0/bin/nvcc' failed with exit status 1
+    ----------------------------------------
+  Rolling back uninstall of torch-sublstm
+  Moving to /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/subLSTM/
+   from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/~~bLSTM
+  Moving to /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so
+   from /tmp/pip-uninstall-j83juwz0/sublstm_cuda.cpython-37m-x86_64-linux-gnu.so
+  Moving to /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch_sublstm-0.1.0.dist-info/
+   from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/~~rch_sublstm-0.1.0.dist-info
+ERROR: Command "/mnt/storage/software/languages/miniconda/miniconda3/bin/python -u -c 'import setuptools, tokenize;__file__='"'"'/tmp/pip-req-build-al54c6fh/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-gkjaj1ed/install-record.txt --single-version-externally-managed --compile --user --prefix=" failed with error code 1 in /tmp/pip-req-build-al54c6fh/
+subLSTMCuda
+slurmstepd: error: *** JOB 3586905 ON gpu17 CANCELLED AT 2020-04-15T13:59:33 ***

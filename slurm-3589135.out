@@ -1,0 +1,98 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3589135
+This job runs on the following machines:
+gpu32
+Processing /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Building wheels for collected packages: torch-sublstm
+  Building wheel for torch-sublstm (setup.py): started
+  Building wheel for torch-sublstm (setup.py): still running...
+  Building wheel for torch-sublstm (setup.py): finished with status 'done'
+  Stored in directory: /mnt/storage/home/mk17486/.cache/pip/wheels/31/17/41/f7b13d3b73f5822baeb1d95f85487aba02a62f36c7b48952c9
+Successfully built torch-sublstm
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+Successfully installed torch-sublstm-0.1.0
+subLSTMCuda
+| epoch   1 |   200/ 1327 batches | lr 0.001000 | ms/batch 413.00 | loss  6.70 | ppl   814.33
+| epoch   1 |   400/ 1327 batches | lr 0.001000 | ms/batch 410.75 | loss  6.22 | ppl   503.00
+| epoch   1 |   600/ 1327 batches | lr 0.001000 | ms/batch 413.93 | loss  6.14 | ppl   463.69
+| epoch   1 |   800/ 1327 batches | lr 0.001000 | ms/batch 432.92 | loss  6.02 | ppl   409.86
+| epoch   1 |  1000/ 1327 batches | lr 0.001000 | ms/batch 440.23 | loss  5.98 | ppl   395.12
+| epoch   1 |  1200/ 1327 batches | lr 0.001000 | ms/batch 439.38 | loss  5.92 | ppl   373.40
+------------------------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  
+Name                                  Self CPU total %  Self CPU total   CPU total %      CPU total        CPU time avg     CUDA total %     CUDA total       CUDA time avg    Number of Calls  
+------------------------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  
+label-BACKWARD                        53.87%           462.624s         53.88%           462.675s         348.400ms        31.76%           511.516s         385.178ms        1328             
+SubLSTMFunctionBackward               23.20%           199.245s         27.22%           233.704s         2.514ms          30.42%           490.049s         5.272ms          92956            
+mm                                    0.24%            2.085s           0.24%            2.085s           21.808us         26.26%           422.943s         4.424ms          95612            
+cat                                   3.30%            28.353s          3.30%            28.353s          43.573us         3.26%            52.582s          80.810us         650692           
+label-FORWARD                         0.62%            5.306s           5.38%            46.207s          34.794ms         2.85%            45.906s          34.567ms         1328             
+SubLSTMFunction                       2.67%            22.960s          3.98%            34.197s          367.884us        2.05%            32.958s          354.551us        92956            
+addmm                                 0.45%            3.880s           0.45%            3.880s           41.155us         0.70%            11.344s          120.320us        94284            
+add                                   2.43%            20.885s          2.43%            20.885s          66.082us         0.61%            9.874s           31.241us         316050           
+dropout                               0.24%            2.102s           0.68%            5.817s           60.843us         0.34%            5.525s           57.783us         95612            
+AddmmBackward                         0.01%            59.372ms         0.02%            182.004ms        137.051us        0.24%            3.880s           2.922ms          1328             
+_fused_dropout                        0.43%            3.715s           0.43%            3.715s           38.857us         0.22%            3.616s           37.824us         95612            
+SelectBackward                        2.48%            21.274s          3.60%            30.926s          665.390us        0.14%            2.260s           48.628us         46478            
+add_                                  0.06%            532.106ms        0.06%            532.106ms        18.217us         0.11%            1.728s           59.145us         29209            
+sum                                   0.63%            5.393s           0.63%            5.393s           28.800us         0.10%            1.680s           8.973us          187240           
+mul_                                  0.06%            495.766ms        0.06%            495.766ms        17.799us         0.09%            1.465s           52.587us         27853            
+FusedDropoutBackward                  0.24%            2.040s           0.51%            4.404s           46.060us         0.07%            1.145s           11.976us         95612            
+transpose                             0.13%            1.134s           0.13%            1.134s           12.197us         0.07%            1.095s           11.775us         92956            
+norm                                  0.04%            371.345ms        0.04%            371.345ms        39.947us         0.07%            1.088s           117.093us        9296             
+slice                                 0.59%            5.048s           0.59%            5.048s           9.007us          0.06%            956.806ms        1.707us          560392           
+addcdiv_                              0.02%            170.978ms        0.02%            170.978ms        18.393us         0.05%            863.704ms        92.911us         9296             
+torch::autograd::AccumulateGrad       0.05%            451.186ms        0.07%            628.096ms        67.566us         0.05%            858.975ms        92.403us         9296             
+addcmul_                              0.02%            160.989ms        0.02%            160.989ms        17.318us         0.04%            638.964ms        68.735us         9296             
+zeros                                 0.13%            1.146s           0.36%            3.119s           63.477us         0.04%            625.940ms        12.739us         49136            
+view                                  0.37%            3.151s           0.37%            3.151s           16.031us         0.04%            567.901ms        2.890us          196536           
+zero_                                 0.18%            1.533s           0.18%            1.533s           26.231us         0.03%            500.700ms        8.570us          58425            
+_masked_scale                         0.28%            2.364s           0.28%            2.364s           24.728us         0.03%            477.752ms        4.997us          95612            
+div                                   0.02%            203.362ms        0.02%            203.362ms        21.862us         0.03%            475.145ms        51.080us         9302             
+EmbeddingBackward                     0.05%            388.595ms        0.05%            471.629ms        355.143us        0.03%            472.612ms        355.883us        1328             
+sqrt                                  0.02%            204.909ms        0.02%            204.909ms        22.043us         0.03%            436.636ms        46.970us         9296             
+LogSoftmaxBackward                    0.00%            27.489ms         0.01%            70.589ms         53.155us         0.02%            306.257ms        230.615us        1328             
+log_softmax                           0.00%            13.961ms         0.01%            52.757ms         39.727us         0.02%            298.169ms        224.525us        1328             
+_log_softmax_backward_data            0.01%            43.100ms         0.01%            43.100ms         32.455us         0.02%            295.931ms        222.839us        1328             
+_log_softmax                          0.00%            38.796ms         0.00%            38.796ms         29.214us         0.02%            293.919ms        221.325us        1328             
+item                                  0.01%            109.384ms        5.97%            51.282s          5.509ms          0.02%            277.172ms        29.778us         9308             
+stack                                 0.03%            216.466ms        0.03%            216.466ms        163.001us        0.01%            225.245ms        169.612us        1328             
+select                                0.83%            7.107s           0.83%            7.107s           76.448us         0.01%            220.160ms        2.368us          92962            
+_local_scalar_dense                   5.96%            51.173s          5.96%            51.173s          5.498ms          0.01%            206.246ms        22.158us         9308             
+unsigned short                        0.15%            1.330s           0.15%            1.330s           13.357us         0.01%            180.484ms        1.812us          99596            
+embedding_backward                    0.00%            14.485ms         0.01%            83.034ms         62.526us         0.01%            140.844ms        106.057us        1328             
+embedding_dense_backward              0.01%            68.550ms         0.01%            68.550ms         51.619us         0.01%            136.079ms        102.469us        1328             
+NllLossBackward                       0.01%            43.238ms         0.01%            115.178ms        86.731us         0.01%            102.949ms        77.522us         1328             
+nll_loss_backward                     0.01%            71.941ms         0.01%            71.941ms         54.172us         0.01%            92.939ms         69.984us         1328             
+empty                                 0.06%            557.782ms        0.06%            557.782ms        11.350us         0.01%            82.734ms         1.684us          49142            
+reshape                               0.01%            64.150ms         0.02%            141.388ms        21.293us         0.00%            65.766ms         9.905us          6640             
+nll_loss                              0.00%            13.341ms         0.01%            59.870ms         45.083us         0.00%            41.866ms         31.526us         1328             
+embedding                             0.01%            84.867ms         0.01%            84.867ms         63.906us         0.00%            38.914ms         29.302us         1328             
+nll_loss_forward                      0.01%            46.529ms         0.01%            46.529ms         35.037us         0.00%            37.377ms         28.146us         1328             
+ViewBackward                          0.00%            29.522ms         0.01%            107.513ms        26.986us         0.00%            34.730ms         8.717us          3984             
+is_floating_point                     0.01%            64.399ms         0.01%            64.399ms         6.923us          0.00%            22.408ms         2.409us          9302             
+detach_                               0.00%            33.254ms         0.00%            33.254ms         3.580us          0.00%            16.960ms         1.826us          9289             
+detach                                0.00%            25.241ms         0.00%            25.241ms         4.749us          0.00%            8.993ms          1.692us          5315             
+torch::autograd::GraphRoot            0.00%            26.028ms         0.00%            26.028ms         19.599us         0.00%            8.938ms          6.731us          1328             
+StackBackward                         0.00%            22.827ms         0.02%            150.534ms        113.354us        0.00%            8.814ms          6.637us          1328             
+TBackward                             0.00%            10.268ms         0.00%            20.857ms         15.705us         0.00%            6.850ms          5.158us          1328             
+profiler::_record_function_enter      0.00%            14.947ms         0.00%            14.947ms         5.628us          0.00%            5.002ms          1.883us          2656             
+profiler::_record_function_exit       0.01%            57.523ms         0.01%            57.523ms         21.658us         0.00%            4.746ms          1.787us          2656             
+unbind                                0.01%            127.707ms        0.01%            127.707ms        96.165us         0.00%            2.200ms          1.657us          1328             
+to                                    0.00%            211.421us        0.00%            262.527us        43.755us         0.00%            264.000us        44.000us         6                
+new_zeros                             0.00%            26.323us         0.00%            125.104us        62.552us         0.00%            122.849us        61.424us         2                
+------------------------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  
+Self CPU time total: 858.711s
+CUDA time total: 1610.691s
+
+<FunctionEventAvg key=Total self_cpu_time=858.711s cpu_time=302.522us cuda_time=479.982us input_shapes=None>
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 736.96s | valid loss  5.70 | valid ppl   298.14
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   285.75
+=========================================================================================

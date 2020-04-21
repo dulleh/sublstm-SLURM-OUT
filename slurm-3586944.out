@@ -1,0 +1,8 @@
+Running on host gpu28.bc4.acrc.priv
+Slurm job ID is 3586944
+This job runs on the following machines:
+gpu28
+subLSTMCuda
+slurmstepd: error: Job 3586944 exceeded memory limit (4439588 > 4096000), being killed
+slurmstepd: error: Exceeded job memory limit
+slurmstepd: error: *** JOB 3586944 ON gpu28 CANCELLED AT 2020-04-15T14:23:14 ***

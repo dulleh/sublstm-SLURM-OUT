@@ -1,0 +1,22 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3602012
+This job runs on the following machines:
+gpu32
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 98, in <module>
+    model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 35, in __init__
+    dropout=dropout)
+  File "../../src/subLSTM/basic/nn.py", line 225, in __init__
+    torch.cudnn.benchmark = True
+AttributeError: module 'torch' has no attribute 'cudnn'

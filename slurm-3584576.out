@@ -1,0 +1,36 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3584576
+This job runs on the following machines:
+gpu12
+LSTM
+Traceback (most recent call last):
+  File "/mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 231, in <module>
+    main()
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 209, in main
+    cprofile_prof = run_cprofile(code, globs)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 74, in run_cprofile
+    exec(code, globs, None)
+  File "main.py", line 239, in <module>
+    val_loss = evaluate(val_data)
+  File "main.py", line 156, in evaluate
+    return total_loss.data(0) / len(data_source)
+TypeError: 'Tensor' object is not callable
+`bottleneck` is a tool that can be used as an initial step for debugging
+bottlenecks in your program.
+
+It summarizes runs of your script with the Python profiler and PyTorch's
+autograd profiler. Because your script will be profiled, please ensure that it
+exits in a finite amount of time.
+
+For more complicated uses of the profilers, please see
+https://docs.python.org/3/library/profile.html and
+https://pytorch.org/docs/master/autograd.html#profiler for more information.
+Running environment analysis...
+Running your script with cProfile
+forward time:  3.3816659450531006  backward time:  5.042028903961182
+subLSTM
+slurmstepd: error: *** JOB 3584576 ON gpu12 CANCELLED AT 2020-04-15T00:43:19 ***

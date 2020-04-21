@@ -1,0 +1,8 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3584596
+This job runs on the following machines:
+gpu12
+LSTM
+slurmstepd: error: Job 3584596 exceeded memory limit (4387676 > 4096000), being killed
+slurmstepd: error: Exceeded job memory limit
+slurmstepd: error: *** JOB 3584596 ON gpu12 CANCELLED AT 2020-04-15T00:47:54 ***

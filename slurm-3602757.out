@@ -1,0 +1,6 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3602757
+This job runs on the following machines:
+gpu32
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+slurmstepd: error: *** JOB 3602757 ON gpu32 CANCELLED AT 2020-04-19T15:17:38 ***

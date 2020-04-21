@@ -1,0 +1,134 @@
+Running on host gpu06.bc4.acrc.priv
+Slurm job ID is 3586842
+This job runs on the following machines:
+gpu06
+subLSTM
+`bottleneck` is a tool that can be used as an initial step for debugging
+bottlenecks in your program.
+
+It summarizes runs of your script with the Python profiler and PyTorch's
+autograd profiler. Because your script will be profiled, please ensure that it
+exits in a finite amount of time.
+
+For more complicated uses of the profilers, please see
+https://docs.python.org/3/library/profile.html and
+https://pytorch.org/docs/master/autograd.html#profiler for more information.
+Running environment analysis...
+Running your script with cProfile
+forward time:  52.419830560684204  backward time:  95.56559634208679
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 166.27s | valid loss  5.70 | valid ppl   299.17
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   287.68
+=========================================================================================
+Running your script with the autograd profiler...
+forward time:  53.203033685684204  backward time:  103.59333539009094
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 175.88s | valid loss  5.70 | valid ppl   299.17
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   287.68
+=========================================================================================
+forward time:  86.05493927001953  backward time:  175.6777422428131
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 289.51s | valid loss  5.70 | valid ppl   299.17
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   287.68
+=========================================================================================
+--------------------------------------------------------------------------------
+  Environment Summary
+--------------------------------------------------------------------------------
+PyTorch 1.4.0 compiled w/ CUDA 10.1
+Running with Python 3.7 and CUDA 10.1.105
+
+`pip list` truncated output:
+numpy==1.18.1
+torch==1.4.0
+torch-sublstm==0.1.0
+torchvision==0.5.0
+--------------------------------------------------------------------------------
+  cProfile output
+--------------------------------------------------------------------------------
+         9152887 function calls (8591599 primitive calls) in 186.311 seconds
+
+   Ordered by: internal time
+   List reduced from 552 to 15 due to restriction <15>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1328   95.432    0.072   95.432    0.072 {method 'run_backward' of 'torch._C._EngineBase' objects}
+   124190   19.674    0.000   53.138    0.000 ../../src/subLSTM/basic/functional.py:4(sublstm)
+   125965   14.154    0.000   14.154    0.000 {built-in method addmm}
+        3    8.334    2.778    8.697    2.899 /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/data.py:26(tokenize)
+   124190    8.300    0.000    8.300    0.000 {method 'matmul' of 'torch._C._TensorBase' objects}
+   248380    7.083    0.000    7.083    0.000 {built-in method sigmoid}
+   127740    4.065    0.000    4.065    0.000 {built-in method dropout}
+       12    3.185    0.265    3.185    0.265 {method 'cuda' of 'torch._C._TensorBase' objects}
+509185/3550    2.227    0.000   67.287    0.019 /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py:522(__call__)
+    35811    2.170    0.000    2.170    0.000 {method 'mul_' of 'torch._C._TensorBase' objects}
+   251933    1.903    0.000    1.903    0.000 {method 't' of 'torch._C._TensorBase' objects}
+    23904    1.615    0.000    1.615    0.000 {method 'add_' of 'torch._C._TensorBase' objects}
+   124190    1.579    0.000    1.579    0.000 {method 'chunk' of 'torch._C._TensorBase' objects}
+     1775    1.532    0.001   63.408    0.036 ../../src/subLSTM/basic/nn.py:253(forward)
+    11952    1.326    0.000    1.326    0.000 {built-in method norm}
+
+
+--------------------------------------------------------------------------------
+  autograd profiler output (CPU mode)
+--------------------------------------------------------------------------------
+        top 15 events sorted by cpu_time_total
+
+------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Name          Self CPU total %  Self CPU total   CPU total %      CPU total        CPU time avg     CUDA total %     CUDA total       CUDA time avg    Number of Calls  Input Shapes                         
+------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+normal_       16.78%           42.687ms         16.78%           42.687ms         42.687ms         NaN              0.000us          0.000us          1                []                                   
+uniform_      16.29%           41.441ms         16.29%           41.441ms         41.441ms         NaN              0.000us          0.000us          1                []                                   
+uniform_      13.90%           35.363ms         13.90%           35.363ms         35.363ms         NaN              0.000us          0.000us          1                []                                   
+uniform_      13.69%           34.828ms         13.69%           34.828ms         34.828ms         NaN              0.000us          0.000us          1                []                                   
+uniform_      4.23%            10.760ms         4.23%            10.760ms         10.760ms         NaN              0.000us          0.000us          1                []                                   
+uniform_      3.75%            9.538ms          3.75%            9.538ms          9.538ms          NaN              0.000us          0.000us          1                []                                   
+uniform_      3.75%            9.528ms          3.75%            9.528ms          9.528ms          NaN              0.000us          0.000us          1                []                                   
+uniform_      3.69%            9.384ms          3.69%            9.384ms          9.384ms          NaN              0.000us          0.000us          1                []                                   
+uniform_      3.49%            8.872ms          3.49%            8.872ms          8.872ms          NaN              0.000us          0.000us          1                []                                   
+uniform_      3.46%            8.792ms          3.46%            8.792ms          8.792ms          NaN              0.000us          0.000us          1                []                                   
+uniform_      3.40%            8.661ms          3.40%            8.661ms          8.661ms          NaN              0.000us          0.000us          1                []                                   
+uniform_      3.40%            8.651ms          3.40%            8.651ms          8.651ms          NaN              0.000us          0.000us          1                []                                   
+uniform_      3.40%            8.645ms          3.40%            8.645ms          8.645ms          NaN              0.000us          0.000us          1                []                                   
+uniform_      3.39%            8.615ms          3.39%            8.615ms          8.615ms          NaN              0.000us          0.000us          1                []                                   
+uniform_      3.38%            8.599ms          3.38%            8.599ms          8.599ms          NaN              0.000us          0.000us          1                []                                   
+------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Self CPU time total: 254.364ms
+CUDA time total: 0.000us
+
+--------------------------------------------------------------------------------
+  autograd profiler output (CUDA mode)
+--------------------------------------------------------------------------------
+        top 15 events sorted by cpu_time_total
+
+	Because the autograd profiler uses the CUDA event API,
+	the CUDA time column reports approximately max(cuda_time, cpu_time).
+	Please ignore this output if your code does not use CUDA.
+
+--------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Name                  Self CPU total %  Self CPU total   CPU total %      CPU total        CPU time avg     CUDA total %     CUDA total       CUDA time avg    Number of Calls  Input Shapes                         
+--------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+SigmoidBackward       7.17%            534.765ms        7.17%            534.765ms        534.765ms        7.17%            534.784ms        534.784ms        1                []                                   
+sigmoid_backward      7.17%            534.720ms        7.17%            534.720ms        534.720ms        7.17%            534.752ms        534.752ms        1                []                                   
+chunk                 7.11%            530.608ms        7.11%            530.608ms        530.608ms        7.11%            530.624ms        530.624ms        1                []                                   
+split                 7.11%            530.560ms        7.11%            530.560ms        530.560ms        7.11%            530.592ms        530.592ms        1                []                                   
+AddmmBackward         6.73%            502.166ms        6.73%            502.166ms        502.166ms        6.73%            502.172ms        502.172ms        1                []                                   
+mm                    6.73%            501.984ms        6.73%            501.984ms        501.984ms        6.73%            502.004ms        502.004ms        1                []                                   
+SubBackward0          6.70%            499.884ms        6.70%            499.884ms        499.884ms        6.70%            499.896ms        499.896ms        1                []                                   
+mul                   6.70%            499.817ms        6.70%            499.817ms        499.817ms        6.70%            499.840ms        499.840ms        1                []                                   
+SigmoidBackward       6.58%            490.970ms        6.58%            490.970ms        490.970ms        6.58%            490.976ms        490.976ms        1                []                                   
+sigmoid_backward      6.58%            490.934ms        6.58%            490.934ms        490.934ms        6.58%            490.960ms        490.960ms        1                []                                   
+SelectBackward        6.40%            477.322ms        6.40%            477.322ms        477.322ms        6.40%            477.328ms        477.328ms        1                []                                   
+zeros                 6.39%            477.197ms        6.39%            477.197ms        477.197ms        6.39%            477.208ms        477.208ms        1                []                                   
+SigmoidBackward       6.23%            465.030ms        6.23%            465.030ms        465.030ms        6.23%            465.040ms        465.040ms        1                []                                   
+sigmoid_backward      6.23%            464.974ms        6.23%            464.974ms        464.974ms        6.23%            465.000ms        465.000ms        1                []                                   
+MmBackward            6.19%            461.602ms        6.19%            461.602ms        461.602ms        6.19%            461.616ms        461.616ms        1                []                                   
+--------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Self CPU time total: 7.463s
+CUDA time total: 7.463s
+

@@ -1,0 +1,134 @@
+Running on host gpu18.bc4.acrc.priv
+Slurm job ID is 3586532
+This job runs on the following machines:
+gpu18
+subLSTMCuda
+`bottleneck` is a tool that can be used as an initial step for debugging
+bottlenecks in your program.
+
+It summarizes runs of your script with the Python profiler and PyTorch's
+autograd profiler. Because your script will be profiled, please ensure that it
+exits in a finite amount of time.
+
+For more complicated uses of the profilers, please see
+https://docs.python.org/3/library/profile.html and
+https://pytorch.org/docs/master/autograd.html#profiler for more information.
+Running environment analysis...
+Running your script with cProfile
+forward time:  545.7247371673584  backward time:  85.47706532478333
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 703.39s | valid loss  5.70 | valid ppl   299.79
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   287.85
+=========================================================================================
+Running your script with the autograd profiler...
+forward time:  544.3699054718018  backward time:  91.36261129379272
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 706.18s | valid loss  5.70 | valid ppl   299.79
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   287.85
+=========================================================================================
+forward time:  554.4610326290131  backward time:  123.12792468070984
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 753.25s | valid loss  5.70 | valid ppl   299.79
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.66 | test ppl   287.85
+=========================================================================================
+--------------------------------------------------------------------------------
+  Environment Summary
+--------------------------------------------------------------------------------
+PyTorch 1.4.0 compiled w/ CUDA 10.1
+Running with Python 3.7 and CUDA 10.1.105
+
+`pip list` truncated output:
+numpy==1.18.1
+torch==1.4.0
+torch-sublstm==0.1.0
+torchvision==0.5.0
+--------------------------------------------------------------------------------
+  cProfile output
+--------------------------------------------------------------------------------
+         5927131 function calls (5635503 primitive calls) in 787.079 seconds
+
+   Ordered by: internal time
+   List reduced from 553 to 15 due to restriction <15>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   124190  645.711    0.005  645.711    0.005 {built-in method sublstm_cuda.forward}
+     1328   85.315    0.064   85.315    0.064 {method 'run_backward' of 'torch._C._EngineBase' objects}
+       16    8.662    0.541    8.662    0.541 {method 'cuda' of 'torch._C._TensorBase' objects}
+   127740    7.464    0.000    7.464    0.000 {built-in method dropout}
+        3    7.408    2.469    7.864    2.621 /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/data.py:26(tokenize)
+   124190    3.549    0.000  649.932    0.005 {built-in method apply}
+     1775    2.879    0.002  667.980    0.376 ../../src/subLSTM/basic/nn.py:253(forward)
+     1775    2.741    0.002    2.741    0.002 {built-in method addmm}
+260805/3550    2.350    0.000  672.425    0.189 /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py:522(__call__)
+    27853    2.270    0.000    2.270    0.000 {method 'mul_' of 'torch._C._TensorBase' objects}
+    18592    1.712    0.000    1.712    0.000 {method 'add_' of 'torch._C._TensorBase' objects}
+     9296    1.324    0.000    1.324    0.000 {built-in method norm}
+     1328    1.138    0.001    7.163    0.005 /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/optim/adam.py:49(step)
+     9296    1.128    0.000    1.128    0.000 {method 'addcdiv_' of 'torch._C._TensorBase' objects}
+     9296    0.888    0.000    0.888    0.000 {method 'addcmul_' of 'torch._C._TensorBase' objects}
+
+
+--------------------------------------------------------------------------------
+  autograd profiler output (CPU mode)
+--------------------------------------------------------------------------------
+        top 15 events sorted by cpu_time_total
+
+-------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Name                 Self CPU total %  Self CPU total   CPU total %      CPU total        CPU time avg     CUDA total %     CUDA total       CUDA time avg    Number of Calls  Input Shapes                         
+-------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+normal_              17.39%           123.291ms        17.39%           123.291ms        123.291ms        NaN              0.000us          0.000us          1                []                                   
+uniform_             12.09%           85.767ms         12.09%           85.767ms         85.767ms         NaN              0.000us          0.000us          1                []                                   
+uniform_             11.10%           78.702ms         11.10%           78.702ms         78.702ms         NaN              0.000us          0.000us          1                []                                   
+uniform_             10.52%           74.637ms         10.52%           74.637ms         74.637ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      5.15%            36.487ms         5.15%            36.487ms         36.487ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      4.90%            34.735ms         4.90%            34.735ms         34.735ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      4.87%            34.541ms         4.87%            34.541ms         34.541ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      4.50%            31.909ms         4.50%            31.909ms         31.909ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      4.49%            31.847ms         4.49%            31.847ms         31.847ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      4.29%            30.396ms         4.29%            30.396ms         30.396ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      4.21%            29.877ms         4.21%            29.877ms         29.877ms         NaN              0.000us          0.000us          1                []                                   
+uniform_             4.20%            29.790ms         4.20%            29.790ms         29.790ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      4.18%            29.627ms         4.18%            29.627ms         29.627ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      4.10%            29.083ms         4.10%            29.083ms         29.083ms         NaN              0.000us          0.000us          1                []                                   
+SubLSTMFunction      4.02%            28.479ms         4.02%            28.479ms         28.479ms         NaN              0.000us          0.000us          1                []                                   
+-------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Self CPU time total: 709.168ms
+CUDA time total: 0.000us
+
+--------------------------------------------------------------------------------
+  autograd profiler output (CUDA mode)
+--------------------------------------------------------------------------------
+        top 15 events sorted by cpu_time_total
+
+	Because the autograd profiler uses the CUDA event API,
+	the CUDA time column reports approximately max(cuda_time, cpu_time).
+	Please ignore this output if your code does not use CUDA.
+
+---------------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Name                         Self CPU total %  Self CPU total   CPU total %      CPU total        CPU time avg     CUDA total %     CUDA total       CUDA time avg    Number of Calls  Input Shapes                         
+---------------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+normal_                      12.72%           95.012ms         12.72%           95.012ms         95.012ms         12.72%           95.020ms         95.020ms         1                []                                   
+uniform_                     12.56%           93.792ms         12.56%           93.792ms         93.792ms         12.56%           93.804ms         93.804ms         1                []                                   
+uniform_                     12.39%           92.562ms         12.39%           92.562ms         92.562ms         12.40%           92.576ms         92.576ms         1                []                                   
+uniform_                     11.20%           83.653ms         11.20%           83.653ms         83.653ms         11.20%           83.664ms         83.664ms         1                []                                   
+SubLSTMFunction              7.07%            52.797ms         7.07%            52.797ms         52.797ms         7.07%            52.800ms         52.800ms         1                []                                   
+SubLSTMFunction              5.85%            43.715ms         5.85%            43.715ms         43.715ms         5.85%            43.728ms         43.728ms         1                []                                   
+SubLSTMFunction              5.10%            38.112ms         5.10%            38.112ms         38.112ms         5.10%            38.120ms         38.120ms         1                []                                   
+SubLSTMFunction              4.42%            32.998ms         4.42%            32.998ms         32.998ms         4.42%            33.000ms         33.000ms         1                []                                   
+SubLSTMFunction              4.17%            31.176ms         4.17%            31.176ms         31.176ms         4.18%            31.200ms         31.200ms         1                []                                   
+uniform_                     4.14%            30.931ms         4.14%            30.931ms         30.931ms         4.14%            30.932ms         30.932ms         1                []                                   
+SubLSTMFunction              4.12%            30.756ms         4.12%            30.756ms         30.756ms         4.12%            30.752ms         30.752ms         1                []                                   
+SubLSTMFunction              4.09%            30.531ms         4.09%            30.531ms         30.531ms         4.08%            30.464ms         30.464ms         1                []                                   
+SelectBackward               4.08%            30.482ms         4.08%            30.482ms         30.482ms         4.08%            30.464ms         30.464ms         1                []                                   
+zeros                        4.06%            30.352ms         4.06%            30.352ms         30.352ms         4.06%            30.336ms         30.336ms         1                []                                   
+SubLSTMFunctionBackward      4.01%            29.982ms         4.01%            29.982ms         29.982ms         4.02%            30.016ms         30.016ms         1                []                                   
+---------------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Self CPU time total: 746.851ms
+CUDA time total: 746.876ms
+

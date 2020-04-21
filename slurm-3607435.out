@@ -1,0 +1,201 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3607435
+This job runs on the following machines:
+gpu32
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+1111
+2222
+3333
+4444
+aaaaa
+bbbb
+True True True False False True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+True True True True True True True
+Traceback (most recent call last):
+  File "main.py", line 232, in <module>
+    train()
+  File "main.py", line 198, in train
+    loss.backward()
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/autograd/__init__.py", line 99, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: No grad accumulator for a saved leaf!

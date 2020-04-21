@@ -1,0 +1,14 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3584324
+This job runs on the following machines:
+gpu12
+subLSTM
+  File "main.py", line 239
+    return
+    ^
+SyntaxError: 'return' outside function
+subLSTMCuda
+  File "main.py", line 239
+    return
+    ^
+SyntaxError: 'return' outside function

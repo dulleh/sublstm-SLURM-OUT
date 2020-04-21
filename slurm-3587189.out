@@ -1,0 +1,13 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3587189
+This job runs on the following machines:
+gpu12
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 231, in <module>
+    train()
+  File "main.py", line 214, in train
+    elapsed * 1000 / args.log_interval, cur_loss, math.exp(cur_loss)))
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/tensor.py", line 410, in __format__
+    return object.__format__(self, format_spec)
+TypeError: unsupported format string passed to Tensor.__format__

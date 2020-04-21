@@ -1,0 +1,110 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3598108
+This job runs on the following machines:
+gpu32
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+    ERROR: Complete output from command /mnt/storage/software/languages/miniconda/miniconda3/bin/python -c 'import setuptools, tokenize;__file__='"'"'/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' develop --no-deps --user --prefix=:
+    ERROR: running develop
+    running egg_info
+    writing src/torch_sublstm.egg-info/PKG-INFO
+    writing dependency_links to src/torch_sublstm.egg-info/dependency_links.txt
+    writing requirements to src/torch_sublstm.egg-info/requires.txt
+    writing top-level names to src/torch_sublstm.egg-info/top_level.txt
+    reading manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+    writing manifest file 'src/torch_sublstm.egg-info/SOURCES.txt'
+    running build_ext
+    building 'sublstm_cuda' extension
+    gcc -pthread -B /mnt/storage/software/languages/miniconda/miniconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/TH -I/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/THC -I/mnt/storage/software/libraries/nvidia/cuda-10.0/include -I/mnt/storage/software/languages/miniconda/miniconda3/include/python3.7m -c src/subLSTM/basic/sublstm.cpp -o build/temp.linux-x86_64-3.7/src/subLSTM/basic/sublstm.o -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=sublstm_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++11
+    cc1plus: warning: command line option '-Wstrict-prototypes' is valid for C/ObjC but not for C++
+    src/subLSTM/basic/sublstm.cpp: In function 'torch::autograd::tensor_list sublstm_apply(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor)':
+    src/subLSTM/basic/sublstm.cpp:198:38: error: no matching function for call to 'SubLSTMFunction::apply(at::Tensor&)'
+       return SubLSTMFunction::apply(input);
+                                          ^
+    In file included from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/modules/_functions.h:3:0,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/modules/normalization.h:4,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/modules.h:26,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn.h:7,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/all.h:7,
+                     from src/subLSTM/basic/sublstm.cpp:6:
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/autograd/custom_function.h:74:15: note: candidate: template<class X, class ... Args> static c10::guts::enable_if_t<std::is_same<U, T>::value, decltype (X:: forward(nullptr, (declval<Args>)()...))> torch::autograd::Function<T>::apply(Args&& ...) [with X = X; Args = {Args ...}; T = SubLSTMFunction]
+       static auto apply(Args&&... args) -> c10::guts::enable_if_t<std::is_same<X,T>::value, forward_t<X,Args...>>;
+                   ^
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/autograd/custom_function.h:74:15: note:   template argument deduction/substitution failed:
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In substitution of 'template<class X, class ... Args> static c10::guts::enable_if_t<std::is_same<U, T>::value, decltype (X:: forward(nullptr, (declval<Args>)()...))> torch::autograd::Function<T>::apply(Args&& ...) [with X = SubLSTMFunction; Args = {at::Tensor&}]':
+    src/subLSTM/basic/sublstm.cpp:198:38:   required from here
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/autograd/custom_function.h:23:38: error: no matching function for call to 'SubLSTMFunction::forward(std::nullptr_t, at::Tensor&)'
+     using forward_t = decltype(X::forward(nullptr, std::declval<Args>()...));
+                                          ^
+    src/subLSTM/basic/sublstm.cpp:142:39: note: candidate: static torch::autograd::tensor_list SubLSTMFunction::forward(torch::autograd::AutogradContext*, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor)
+       static torch::autograd::tensor_list forward(
+                                           ^
+    src/subLSTM/basic/sublstm.cpp:142:39: note:   candidate expects 6 arguments, 2 provided
+    In file included from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue.h:651:0,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/jit_type.h:6,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/function_schema.h:4,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/dispatch/DispatchTable.h:3,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/dispatch/OperatorEntry.h:3,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/dispatch/Dispatcher.h:3,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/TensorMethods.h:10,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:12,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/ATen.h:5,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader_options.h:4,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader/base.h:3,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader/stateful.h:3,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader.h:3,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data.h:3,
+                     from /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/all.h:4,
+                     from src/subLSTM/basic/sublstm.cpp:6:
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h: In instantiation of 'struct c10::ivalue::detail::has_constructor<std::vector<at::Tensor>, void>':
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h:844:23:   required from 'c10::IValue c10::ivalue::from(T) [with T = std::vector<at::Tensor>]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/kernel_functor.h:184:29:   required from 'c10::IValue c10::detail::return_to_ivalue(T&&) [with T = std::vector<at::Tensor>; bool AllowDeprecatedTypes = true]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/kernel_functor.h:208:82:   required from 'static void c10::detail::push_outputs<OutputType, AllowDeprecatedTypes>::call(OutputType&&, c10::Stack*) [with OutputType = std::vector<at::Tensor>; bool AllowDeprecatedTypes = true; c10::Stack = std::vector<c10::IValue, std::allocator<c10::IValue> >]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/kernel_functor.h:236:115:   required from 'static void c10::detail::wrap_kernel_functor_boxed<KernelFunctor, AllowDeprecatedTypes, typename std::enable_if<(! std::is_same<void, typename c10::guts::infer_function_traits<Functor>::type::return_type>::value), void>::type>::call(c10::OperatorKernel*, c10::Stack*) [with KernelFunctor = c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor> (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor>, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >; bool AllowDeprecatedTypes = true; c10::Stack = std::vector<c10::IValue, std::allocator<c10::IValue> >]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/KernelFunction.h:172:7:   required from 'static c10::KernelFunction c10::KernelFunction::makeFromUnboxedFunctor(std::unique_ptr<c10::OperatorKernel>) [with bool AllowLegacyTypes = true; KernelFunctor = c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor> (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor>, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/KernelFunction.h:313:111:   required from 'static c10::KernelFunction c10::KernelFunction::makeFromUnboxedRuntimeFunction(FuncType*) [with bool AllowLegacyTypes = true; FuncType = std::vector<at::Tensor>(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor)]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/op_registration/op_registration.h:517:72:   required from 'c10::guts::enable_if_t<(c10::guts::is_function_type<T>::value && (! std::is_same<FuncType, void(c10::OperatorKernel*, std::vector<c10::IValue, std::allocator<c10::IValue> >*)>::value)), c10::RegisterOperators&&> c10::RegisterOperators::op(const string&, FuncType*, c10::RegisterOperators::Options&&) && [with FuncType = std::vector<at::Tensor>(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor); c10::guts::enable_if_t<(c10::guts::is_function_type<T>::value && (! std::is_same<FuncType, void(c10::OperatorKernel*, std::vector<c10::IValue, std::allocator<c10::IValue> >*)>::value)), c10::RegisterOperators&&> = c10::RegisterOperators&&; std::string = std::basic_string<char>]'
+    src/subLSTM/basic/sublstm.cpp:203:51:   required from here
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h:815:19: warning: 'c10::IValue::IValue(std::vector<at::Tensor>)' is deprecated [-Wdeprecated-declarations]
+     >: std::true_type {};
+                       ^
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h:700:8: note: declared here
+     inline IValue::IValue(std::vector<at::Tensor> v)
+            ^
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h:815:19: warning: 'c10::IValue::IValue(std::vector<at::Tensor>)' is deprecated [-Wdeprecated-declarations]
+     >: std::true_type {};
+                       ^
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h:700:8: note: declared here
+     inline IValue::IValue(std::vector<at::Tensor> v)
+            ^
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h: In instantiation of 'c10::IValue c10::ivalue::detail::from_(T, std::true_type) [with T = std::vector<at::Tensor>; std::true_type = std::integral_constant<bool, true>]':
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h:844:23:   required from 'c10::IValue c10::ivalue::from(T) [with T = std::vector<at::Tensor>]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/kernel_functor.h:184:29:   required from 'c10::IValue c10::detail::return_to_ivalue(T&&) [with T = std::vector<at::Tensor>; bool AllowDeprecatedTypes = true]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/kernel_functor.h:208:82:   required from 'static void c10::detail::push_outputs<OutputType, AllowDeprecatedTypes>::call(OutputType&&, c10::Stack*) [with OutputType = std::vector<at::Tensor>; bool AllowDeprecatedTypes = true; c10::Stack = std::vector<c10::IValue, std::allocator<c10::IValue> >]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/kernel_functor.h:236:115:   required from 'static void c10::detail::wrap_kernel_functor_boxed<KernelFunctor, AllowDeprecatedTypes, typename std::enable_if<(! std::is_same<void, typename c10::guts::infer_function_traits<Functor>::type::return_type>::value), void>::type>::call(c10::OperatorKernel*, c10::Stack*) [with KernelFunctor = c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor> (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor>, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >; bool AllowDeprecatedTypes = true; c10::Stack = std::vector<c10::IValue, std::allocator<c10::IValue> >]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/KernelFunction.h:172:7:   required from 'static c10::KernelFunction c10::KernelFunction::makeFromUnboxedFunctor(std::unique_ptr<c10::OperatorKernel>) [with bool AllowLegacyTypes = true; KernelFunctor = c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor> (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor>, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/boxing/KernelFunction.h:313:111:   required from 'static c10::KernelFunction c10::KernelFunction::makeFromUnboxedRuntimeFunction(FuncType*) [with bool AllowLegacyTypes = true; FuncType = std::vector<at::Tensor>(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor)]'
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/op_registration/op_registration.h:517:72:   required from 'c10::guts::enable_if_t<(c10::guts::is_function_type<T>::value && (! std::is_same<FuncType, void(c10::OperatorKernel*, std::vector<c10::IValue, std::allocator<c10::IValue> >*)>::value)), c10::RegisterOperators&&> c10::RegisterOperators::op(const string&, FuncType*, c10::RegisterOperators::Options&&) && [with FuncType = std::vector<at::Tensor>(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor); c10::guts::enable_if_t<(c10::guts::is_function_type<T>::value && (! std::is_same<FuncType, void(c10::OperatorKernel*, std::vector<c10::IValue, std::allocator<c10::IValue> >*)>::value)), c10::RegisterOperators&&> = c10::RegisterOperators&&; std::string = std::basic_string<char>]'
+    src/subLSTM/basic/sublstm.cpp:203:51:   required from here
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h:819:18: warning: 'c10::IValue::IValue(std::vector<at::Tensor>)' is deprecated [-Wdeprecated-declarations]
+       return IValue(x);
+                      ^
+    /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/include/ATen/core/ivalue_inl.h:700:8: note: declared here
+     inline IValue::IValue(std::vector<at::Tensor> v)
+            ^
+    error: command 'gcc' failed with exit status 1
+    ----------------------------------------
+  Rolling back uninstall of torch-sublstm
+  Moving to /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch-sublstm.egg-link
+   from /tmp/pip-uninstall-mozm0o94/torch-sublstm.egg-link
+ERROR: Command "/mnt/storage/software/languages/miniconda/miniconda3/bin/python -c 'import setuptools, tokenize;__file__='"'"'/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' develop --no-deps --user --prefix=" failed with error code 1 in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/
+subLSTMCuda
+slurmstepd: error: *** JOB 3598108 ON gpu32 CANCELLED AT 2020-04-18T21:16:37 ***

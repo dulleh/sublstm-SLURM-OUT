@@ -1,0 +1,12 @@
+Running on host gpu08.bc4.acrc.priv
+Slurm job ID is 3610045
+This job runs on the following machines:
+gpu08
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+/tmp/slurmd/job3610045/slurm_script: line 32:  2097 Segmentation fault      python main.py --model=subLSTMCuda --cuda --emsize 650 --nhid 650 --dropout 0.5 --epochs 5 --lr 0.001 --optim adam --nlayers 2

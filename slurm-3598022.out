@@ -1,0 +1,52 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3598022
+This job runs on the following machines:
+gpu12
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 98, in <module>
+    model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 35, in __init__
+    dropout=dropout)
+  File "../../src/subLSTM/basic/nn.py", line 215, in __init__
+    traced_layer = torch.jit.script(layer_type(layer_in_size, layer_out_size, bias))
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/__init__.py", line 1255, in script
+    return torch.jit._recursive.recursive_script(obj)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/_recursive.py", line 534, in recursive_script
+    return create_script_module(nn_module, infer_methods_to_compile(nn_module))
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/_recursive.py", line 296, in create_script_module
+    return create_script_module_impl(nn_module, concrete_type, cpp_module, stubs)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/_recursive.py", line 340, in create_script_module_impl
+    create_methods_from_stubs(concrete_type, stubs)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/_recursive.py", line 259, in create_methods_from_stubs
+    concrete_type._create_methods(defs, rcbs, defaults)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/__init__.py", line 1115, in _compile_and_register_class
+    _jit_script_class_compile(qualified_name, ast, rcb)
+RuntimeError: 
+Tried to access nonexistent attribute or method 'saved_tensors' of type '__torch__.subLSTM.basic.nn.SubLSTMFunction'. Did you forget to initialize an attribute in __init__()?:
+  File "../../src/subLSTM/basic/nn.py", line 38
+        grad_h = grad_h.contiguous()
+
+        saved = ctx.saved_tensors
+                ~~~~~~~~~~~~~~~~~ <--- HERE
+        outputs = torch.ops.sublstm.backward(grad_h, grad_cell, *saved)
+'SubLSTMFunction.backward' is being compiled since it was called from 'SubLSTMFunction'
+  File "../../src/subLSTM/basic/nn.py", line 87
+    def forward(self, input, state):
+        return SubLSTMFunction.apply(input, self.weights, self.bias, *state)
+               ~~~~~~~~~~~~~~~ <--- HERE
+'SubLSTMFunction' is being compiled since it was called from 'SubLSTMCudaCell.forward'
+  File "../../src/subLSTM/basic/nn.py", line 87
+    def forward(self, input, state):
+        return SubLSTMFunction.apply(input, self.weights, self.bias, *state)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+

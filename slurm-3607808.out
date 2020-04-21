@@ -1,0 +1,89 @@
+Running on host gpu32.bc4.acrc.priv
+Slurm job ID is 3607808
+This job runs on the following machines:
+gpu32
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+True True True False False False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+True True True True True False False
+Traceback (most recent call last):
+  File "main.py", line 232, in <module>
+    train()
+  File "main.py", line 198, in train
+    loss.backward()
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/autograd/__init__.py", line 99, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/autograd/function.py", line 77, in apply
+    return self._forward_cls.backward(self, *args)
+  File "../../src/subLSTM/basic/nn.py", line 91, in backward
+    outputs = torch.ops.sublstm.backward(grad_h, grad_cell, new_cell, input_gate, output_gate, forget_gate, candidate_cell, X, gate_weights, weights, old_cell)
+RuntimeError: expected 3 dims but tensor has 2 (generic_packed_accessor at /pytorch/build/aten/src/ATen/core/TensorBody.h:351)
+frame #0: c10::Error::Error(c10::SourceLocation, std::string const&) + 0x33 (0x2b4fb6661193 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #1: at::GenericPackedTensorAccessor<float, 3ul, at::RestrictPtrTraits, int> at::Tensor::generic_packed_accessor<float, 3ul, at::RestrictPtrTraits, int>() const & + 0x12b (0x2b4ff03d92bb in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #2: at::GenericPackedTensorAccessor<float, 3ul, at::RestrictPtrTraits, int> at::Tensor::packed_accessor32<float, 3ul, at::RestrictPtrTraits>() const & + 0x23 (0x2b503729b073 in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #3: <unknown function> + 0x6e4be (0x2b503728f4be in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #4: <unknown function> + 0x6e810 (0x2b503728f810 in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #5: backward_cuda(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor) + 0x39c (0x2b503728fd46 in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #6: backward_sublstm(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor) + 0x370 (0x2b503726c020 in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #7: c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor, std::allocator<at::Tensor> > (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor, std::allocator<at::Tensor> >, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >::operator()(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor) + 0x15c (0x2b503728511c in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #8: c10::guts::infer_function_traits_t::return_type c10::detail::call_functor_with_args_from_stack_<c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor, std::allocator<at::Tensor> > (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor, std::allocator<at::Tensor> >, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >, true, 0ul, 1ul, 2ul, 3ul, 4ul, 5ul, 6ul, 7ul, 8ul, 9ul, 10ul>(c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor, std::allocator<at::Tensor> > (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor, std::allocator<at::Tensor> >, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >*, std::vector<c10::IValue, std::allocator<c10::IValue> >*, c10::guts::integer_sequence<unsigned long, 0ul, 1ul, 2ul, 3ul, 4ul, 5ul, 6ul, 7ul, 8ul, 9ul, 10ul>) + 0x19c (0x2b503728562c in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #9: c10::detail::wrap_kernel_functor_boxed<c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor, std::allocator<at::Tensor> > (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor, std::allocator<at::Tensor> >, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >, true, void>::call(c10::OperatorKernel*, std::vector<c10::IValue, std::allocator<c10::IValue> >*) + 0x35 (0x2b503728adc5 in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #10: <unknown function> + 0x33eb009 (0x2b4fedf12009 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #11: <unknown function> + 0x40e8547 (0x2b4feec0f547 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #12: <unknown function> + 0x6df26f (0x2b4fea1a326f in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #13: <unknown function> + 0x6aa484 (0x2b4fea16e484 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #14: <unknown function> + 0x295a74 (0x2b4fe9d59a74 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #24: torch::autograd::PyNode::apply(std::vector<at::Tensor, std::allocator<at::Tensor> >&&) + 0x178 (0x2b4fea1259a8 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #25: <unknown function> + 0x4014ff6 (0x2b4feeb3bff6 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #26: torch::autograd::Engine::evaluate_function(std::shared_ptr<torch::autograd::GraphTask>&, torch::autograd::Node*, torch::autograd::InputBuffer&) + 0x1373 (0x2b4feeb38453 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #27: torch::autograd::Engine::thread_main(std::shared_ptr<torch::autograd::GraphTask> const&, bool) + 0x4b2 (0x2b4feeb39082 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #28: torch::autograd::Engine::thread_init(int) + 0x39 (0x2b4feeb32979 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #29: torch::autograd::python::PythonEngine::thread_init(int) + 0x2a (0x2b4fea11d91a in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #30: <unknown function> + 0xedef (0x2b4fadc3bdef in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/_C.cpython-37m-x86_64-linux-gnu.so)
+frame #31: <unknown function> + 0x7dc5 (0x2b4fa8ad8dc5 in /usr/lib64/libpthread.so.0)
+frame #32: clone + 0x6d (0x2b4fa8de473d in /usr/lib64/libc.so.6)
+

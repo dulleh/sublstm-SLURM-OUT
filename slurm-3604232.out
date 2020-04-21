@@ -1,0 +1,74 @@
+Running on host gpu16.bc4.acrc.priv
+Slurm job ID is 3604232
+This job runs on the following machines:
+gpu16
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+graph(%self : __torch__.subLSTM.basic.nn.SubLSTMCudaCell,
+      %input.1 : Tensor,
+      %state.1 : (Tensor, Tensor)):
+  %11 : int = prim::Constant[value=1]() # ../../src/subLSTM/basic/nn.py:100:56
+  %20 : int = prim::Constant[value=0]() # ../../src/subLSTM/basic/nn.py:102:81
+  %old_h.1 : Tensor, %old_cell.1 : Tensor = prim::TupleUnpack(%state.1)
+  %7 : Tensor = aten::detach(%old_h.1) # ../../src/subLSTM/basic/nn.py:100:23
+  %9 : Tensor = aten::detach(%input.1) # ../../src/subLSTM/basic/nn.py:100:39
+  %12 : Tensor[] = prim::ListConstruct(%7, %9)
+  %X.1 : Tensor = aten::cat(%12, %11) # ../../src/subLSTM/basic/nn.py:100:12
+  %X.3 : Tensor = aten::detach(%X.1) # ../../src/subLSTM/basic/nn.py:101:12
+  %16 : Tensor = prim::GetAttr[name="bias"](%self)
+  %17 : Tensor = aten::detach(%16) # ../../src/subLSTM/basic/nn.py:102:35
+  %19 : Tensor = prim::GetAttr[name="weights"](%self)
+  %21 : Tensor = aten::transpose(%19, %20, %11) # ../../src/subLSTM/basic/nn.py:102:58
+  %22 : Tensor = aten::detach(%21) # ../../src/subLSTM/basic/nn.py:102:58
+  %gate_weights.1 : Tensor = aten::addmm(%17, %X.3, %22, %11, %11) # ../../src/subLSTM/basic/nn.py:102:23
+  %29 : Tensor = prim::GetAttr[name="weights"](%self)
+  %30 : Tensor = prim::GetAttr[name="bias"](%self)
+  %35 : Tensor[] = prim::ListConstruct(%X.3, %gate_weights.1)
+  %36 : Tensor[] = sublstm::apply(%input.1, %29, %30, %old_h.1, %old_cell.1, %35) # ../../src/subLSTM/basic/nn.py:104:26
+  %new_h.1 : Tensor, %new_cell.1 : Tensor = prim::ListUnpack(%36)
+  %41 : (Tensor, Tensor) = prim::TupleConstruct(%new_h.1, %new_cell.1)
+  return (%41)
+
+graph(%self : __torch__.subLSTM.basic.nn.SubLSTMCudaCell,
+      %input.1 : Tensor,
+      %state.1 : (Tensor, Tensor)):
+  %11 : int = prim::Constant[value=1]() # ../../src/subLSTM/basic/nn.py:100:56
+  %20 : int = prim::Constant[value=0]() # ../../src/subLSTM/basic/nn.py:102:81
+  %old_h.1 : Tensor, %old_cell.1 : Tensor = prim::TupleUnpack(%state.1)
+  %7 : Tensor = aten::detach(%old_h.1) # ../../src/subLSTM/basic/nn.py:100:23
+  %9 : Tensor = aten::detach(%input.1) # ../../src/subLSTM/basic/nn.py:100:39
+  %12 : Tensor[] = prim::ListConstruct(%7, %9)
+  %X.1 : Tensor = aten::cat(%12, %11) # ../../src/subLSTM/basic/nn.py:100:12
+  %X.3 : Tensor = aten::detach(%X.1) # ../../src/subLSTM/basic/nn.py:101:12
+  %16 : Tensor = prim::GetAttr[name="bias"](%self)
+  %17 : Tensor = aten::detach(%16) # ../../src/subLSTM/basic/nn.py:102:35
+  %19 : Tensor = prim::GetAttr[name="weights"](%self)
+  %21 : Tensor = aten::transpose(%19, %20, %11) # ../../src/subLSTM/basic/nn.py:102:58
+  %22 : Tensor = aten::detach(%21) # ../../src/subLSTM/basic/nn.py:102:58
+  %gate_weights.1 : Tensor = aten::addmm(%17, %X.3, %22, %11, %11) # ../../src/subLSTM/basic/nn.py:102:23
+  %29 : Tensor = prim::GetAttr[name="weights"](%self)
+  %30 : Tensor = prim::GetAttr[name="bias"](%self)
+  %35 : Tensor[] = prim::ListConstruct(%X.3, %gate_weights.1)
+  %36 : Tensor[] = sublstm::apply(%input.1, %29, %30, %old_h.1, %old_cell.1, %35) # ../../src/subLSTM/basic/nn.py:104:26
+  %new_h.1 : Tensor, %new_cell.1 : Tensor = prim::ListUnpack(%36)
+  %41 : (Tensor, Tensor) = prim::TupleConstruct(%new_h.1, %new_cell.1)
+  return (%41)
+
+Traceback (most recent call last):
+  File "main.py", line 232, in <module>
+    train()
+  File "main.py", line 198, in train
+    loss.backward()
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/autograd/__init__.py", line 99, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: No grad accumulator for a saved leaf!

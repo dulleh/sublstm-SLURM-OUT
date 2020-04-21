@@ -1,0 +1,86 @@
+Running on host gpu11.bc4.acrc.priv
+Slurm job ID is 3609100
+This job runs on the following machines:
+gpu11
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+def forward(self,
+    input: Tensor,
+    state: Optional[List[Tuple[Tensor, Tensor]]]) -> Tuple[Tensor, List[Tuple[Tensor, Tensor]]]:
+  if self.batch_first:
+    max_batch_size = torch.size(input, 0)
+  else:
+    max_batch_size = torch.size(input, 1)
+  hx = annotate(List[Tuple[Tensor, Tensor]], [])
+  if torch.__is__(state, None):
+    for l in range(self.num_layers):
+      _0 = [max_batch_size, self.hidden_size]
+      _1 = torch.new_zeros(input, _0, dtype=None, layout=None, device=None, pin_memory=None)
+      hidden = torch.detach(_1)
+      _2 = torch.append(hx, (hidden, hidden))
+    hx0 = hx
+  else:
+    hx0 = unchecked_cast(List[Tuple[Tensor, Tensor]], state)
+  if self.batch_first:
+    input0 = torch.contiguous(torch.transpose(input, 0, 1), memory_format=0)
+  else:
+    input0 = input
+  timesteps = torch.size(input0, 0)
+  outputs = []
+  for i in range(timesteps):
+    _3 = torch.append(outputs, torch.select(input0, 0, i))
+  for time in range(timesteps):
+    _4 = self.all_layers
+    _5 = getattr(_4, "0")
+    _6 = getattr(_4, "1")
+    _7 = (self).flatten_parameters()
+    _8 = (_5).forward(outputs[time], hx0[0], )
+    out, c, = _8
+    if self.use_dropout:
+      out0 = (self.dropout).forward(out, )
+    else:
+      out0 = out
+    _9 = torch._set_item(hx0, 0, (out0, c))
+    _10 = torch._set_item(outputs, time, out0)
+    _11 = (self).flatten_parameters()
+    _12 = (_6).forward(outputs[time], hx0[1], )
+    out1, c0, = _12
+    if self.use_dropout:
+      out2 = (self.dropout).forward(out1, )
+    else:
+      out2 = out1
+    _13 = torch._set_item(hx0, 1, (out2, c0))
+    _14 = torch._set_item(outputs, time, out2)
+  out3 = torch.stack(outputs, 0)
+  if self.batch_first:
+    out4 = torch.transpose(out3, 0, 1)
+  else:
+    out4 = out3
+  return (out4, hx0)
+
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 67.28s | valid loss  5.71 | valid ppl   300.38
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   2 | time: 66.64s | valid loss  5.59 | valid ppl   267.54
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   3 | time: 64.77s | valid loss  5.53 | valid ppl   251.49
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   4 | time: 64.35s | valid loss  5.48 | valid ppl   240.94
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| end of epoch   5 | time: 64.32s | valid loss  5.44 | valid ppl   231.21
+-----------------------------------------------------------------------------------------
+=========================================================================================
+| End of training | test loss  5.39 | test ppl   219.50
+=========================================================================================

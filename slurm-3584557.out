@@ -1,0 +1,37 @@
+Running on host gpu13.bc4.acrc.priv
+Slurm job ID is 3584557
+This job runs on the following machines:
+gpu13
+LSTM
+Traceback (most recent call last):
+  File "/mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/mnt/storage/software/languages/miniconda/miniconda3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 231, in <module>
+    main()
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 209, in main
+    cprofile_prof = run_cprofile(code, globs)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 74, in run_cprofile
+    exec(code, globs, None)
+  File "main.py", line 243, in <module>
+    val_loss, math.exp(val_loss)))
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/tensor.py", line 410, in __format__
+    return object.__format__(self, format_spec)
+TypeError: unsupported format string passed to Tensor.__format__
+`bottleneck` is a tool that can be used as an initial step for debugging
+bottlenecks in your program.
+
+It summarizes runs of your script with the Python profiler and PyTorch's
+autograd profiler. Because your script will be profiled, please ensure that it
+exits in a finite amount of time.
+
+For more complicated uses of the profilers, please see
+https://docs.python.org/3/library/profile.html and
+https://pytorch.org/docs/master/autograd.html#profiler for more information.
+Running environment analysis...
+Running your script with cProfile
+forward time:  2.472623109817505  backward time:  3.721672534942627
+-----------------------------------------------------------------------------------------
+subLSTM
+slurmstepd: error: *** JOB 3584557 ON gpu13 CANCELLED AT 2020-04-15T00:35:08 ***

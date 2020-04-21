@@ -1,0 +1,46 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3584195
+This job runs on the following machines:
+gpu12
+subLSTM
+forward time:  31.21630311012268  backward time:  42.65204381942749
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 89.29s | valid loss  5.70 | valid ppl   299.17
+-----------------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "main.py", line 277, in <module>
+    test_loss = evaluate(test_data)
+  File "main.py", line 164, in evaluate
+    output, hidden = model(data, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 69, in forward
+    emb = self.drop(self.encoder(input))
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/sparse.py", line 114, in forward
+    self.norm_type, self.scale_grad_by_freq, self.sparse)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/functional.py", line 1484, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: Expected object of device type cuda but got device type cpu for argument #3 'index' in call to _th_index_select
+subLSTMCuda
+forward time:  33.01072907447815  backward time:  356.1014869213104
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 566.08s | valid loss  5.70 | valid ppl   299.79
+-----------------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "main.py", line 277, in <module>
+    test_loss = evaluate(test_data)
+  File "main.py", line 164, in evaluate
+    output, hidden = model(data, hidden)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 69, in forward
+    emb = self.drop(self.encoder(input))
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/sparse.py", line 114, in forward
+    self.norm_type, self.scale_grad_by_freq, self.sparse)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/functional.py", line 1484, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: Expected object of device type cuda but got device type cpu for argument #3 'index' in call to _th_index_select

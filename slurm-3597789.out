@@ -1,0 +1,51 @@
+Running on host gpu12.bc4.acrc.priv
+Slurm job ID is 3597789
+This job runs on the following machines:
+gpu12
+Obtaining file:///mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM
+Requirement already satisfied: numpy in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.18.1)
+Requirement already satisfied: torch in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages (from torch-sublstm==0.1.0) (1.4.0)
+Installing collected packages: torch-sublstm
+  Found existing installation: torch-sublstm 0.1.0
+    Uninstalling torch-sublstm-0.1.0:
+      Successfully uninstalled torch-sublstm-0.1.0
+  Running setup.py develop for torch-sublstm
+Successfully installed torch-sublstm
+subLSTMCuda
+Traceback (most recent call last):
+  File "main.py", line 98, in <module>
+    model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied)
+  File "/mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/tasks/word_language_model/model.py", line 35, in __init__
+    dropout=dropout)
+  File "../../src/subLSTM/basic/nn.py", line 215, in __init__
+    traced_layer = torch.jit.trace(layer, (INPUT,STATE))
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/__init__.py", line 882, in trace
+    check_tolerance, _force_outplace, _module_class)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/jit/__init__.py", line 1034, in trace_module
+    module._c._create_method_from_trace(method_name, func, example_inputs, var_lookup_fn, _force_outplace)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 530, in __call__
+    result = self._slow_forward(*input, **kwargs)
+  File "/mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 516, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "../../src/subLSTM/basic/nn.py", line 89, in forward
+    return SubLSTMFunction.apply(input, self.weights, self.bias, *state)
+  File "../../src/subLSTM/basic/nn.py", line 27, in forward
+    old_cell)
+RuntimeError: input must be a CUDA tensor (forward at src/subLSTM/basic/sublstm.cpp:31)
+frame #0: c10::Error::Error(c10::SourceLocation, std::string const&) + 0x33 (0x2b8e9517b193 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #1: forward(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor) + 0x33b (0x2b8e972e508b in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #2: c10::guts::infer_function_traits_t::return_type c10::detail::call_functor_with_args_from_stack_<c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor, std::allocator<at::Tensor> > (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor, std::allocator<at::Tensor> >, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >, true, 0ul, 1ul, 2ul, 3ul, 4ul>(c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor, std::allocator<at::Tensor> > (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor, std::allocator<at::Tensor> >, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >*, std::vector<c10::IValue, std::allocator<c10::IValue> >*, c10::guts::integer_sequence<unsigned long, 0ul, 1ul, 2ul, 3ul, 4ul>) + 0x13e (0x2b8e972f9d7e in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #3: c10::detail::wrap_kernel_functor_boxed<c10::detail::WrapRuntimeKernelFunctor_<std::vector<at::Tensor, std::allocator<at::Tensor> > (*)(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor), std::vector<at::Tensor, std::allocator<at::Tensor> >, c10::guts::typelist::typelist<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> >, true, void>::call(c10::OperatorKernel*, std::vector<c10::IValue, std::allocator<c10::IValue> >*) + 0x35 (0x2b8e972fe105 in /mnt/storage/home/mk17486/neural-networks/pytorch-subLSTM/src/sublstm_cuda.so)
+frame #4: <unknown function> + 0x33eb009 (0x2b8e4df96009 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x40e8547 (0x2b8e4ec93547 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #6: <unknown function> + 0x6df26f (0x2b8e4a22726f in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0x6aa484 (0x2b8e4a1f2484 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0x295a74 (0x2b8e49ddda74 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #13: THPFunction_apply(_object*, _object*) + 0xa7f (0x2b8e4a1af3ef in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #30: <unknown function> + 0x75ce03 (0x2b8e4a2a4e03 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #31: torch::jit::tracer::trace(std::vector<c10::IValue, std::allocator<c10::IValue> >, std::function<std::vector<c10::IValue, std::allocator<c10::IValue> > (std::vector<c10::IValue, std::allocator<c10::IValue> >)> const&, std::function<std::string (at::Tensor const&)>, bool, torch::jit::script::Module*) + 0x4e6 (0x2b8e4eec29e6 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch.so)
+frame #32: <unknown function> + 0x759091 (0x2b8e4a2a1091 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #33: <unknown function> + 0x7728e2 (0x2b8e4a2ba8e2 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #34: <unknown function> + 0x295a74 (0x2b8e49ddda74 in /mnt/storage/home/mk17486/.local/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+
